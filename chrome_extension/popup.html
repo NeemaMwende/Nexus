@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexus Monitor</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 340px;
+    min-height: 400px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 13px;
+    background: #0f0f13;
+    color: #e2e2e2;
+  }
+
+  /* Header */
+  .header {
+    background: #1a1a24;
+    border-bottom: 1px solid #2a2a38;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-text { font-size: 15px; font-weight: 700; }
+  .logo-techno { color: #2D3561; }
+  .logo-brain  { color: #F4801A; }
+  .logo-nexus  { color: #888; font-size: 11px; margin-left: 4px; }
+
+  .status-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #555;
+    transition: background 0.3s;
+  }
+  .status-dot.online  { background: #22c55e; box-shadow: 0 0 6px #22c55e88; }
+  .status-dot.offline { background: #ef4444; }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    border-bottom: 1px solid #2a2a38;
+    background: #141418;
+  }
+  .tab {
+    flex: 1; padding: 8px; text-align: center; cursor: pointer;
+    font-size: 11px; color: #666; border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .tab.active { color: #F4801A; border-bottom-color: #F4801A; }
+  .tab:hover:not(.active) { color: #aaa; }
+
+  /* Content panels */
+  .panel { display: none; padding: 14px 16px; }
+  .panel.active { display: block; }
+
+  /* Status panel */
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .stat-card {
+    background: #1a1a24; border: 1px solid #2a2a38;
+    border-radius: 6px; padding: 10px;
+  }
+  .stat-label { font-size: 10px; color: #666; margin-bottom: 4px; }
+  .stat-value { font-size: 16px; font-weight: 600; color: #e2e2e2; }
+  .stat-value.green { color: #22c55e; }
+  .stat-value.orange { color: #F4801A; }
+
+  /* Activity feed */
+  .feed-title { font-size: 11px; color: #666; margin-bottom: 8px; }
+  .feed { max-height: 180px; overflow-y: auto; }
+  .feed-item {
+    background: #1a1a24; border-left: 3px solid #2a2a38;
+    padding: 8px 10px; margin-bottom: 6px; border-radius: 0 4px 4px 0;
+    font-size: 11px; line-height: 1.5;
+  }
+  .feed-item.done    { border-left-color: #22c55e; }
+  .feed-item.spam    { border-left-color: #f59e0b; }
+  .feed-item.error   { border-left-color: #ef4444; }
+  .feed-item.started { border-left-color: #3b82f6; }
+  .feed-time { color: #555; font-size: 10px; margin-top: 3px; }
+
+  /* Settings panel */
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-size: 11px; color: #888; margin-bottom: 4px; }
+  .field input[type="text"],
+  .field input[type="password"],
+  .field input[type="url"] {
+    width: 100%; padding: 7px 10px;
+    background: #1a1a24; border: 1px solid #2a2a38;
+    border-radius: 4px; color: #e2e2e2; font-size: 12px;
+    outline: none;
+  }
+  .field input:focus { border-color: #F4801A; }
+  .field .toggle {
+    display: flex; align-items: center; gap: 8px; cursor: pointer;
+  }
+  .toggle-switch {
+    width: 36px; height: 20px; background: #333;
+    border-radius: 10px; position: relative; transition: background 0.2s;
+  }
+  .toggle-switch.on { background: #F4801A; }
+  .toggle-switch::after {
+    content: ''; position: absolute; top: 2px; left: 2px;
+    width: 16px; height: 16px; background: #fff;
+    border-radius: 50%; transition: left 0.2s;
+  }
+  .toggle-switch.on::after { left: 18px; }
+
+  /* Buttons */
+  .btn {
+    width: 100%; padding: 8px; border: none; border-radius: 4px;
+    font-size: 12px; font-weight: 600; cursor: pointer; margin-top: 4px;
+  }
+  .btn-primary { background: #F4801A; color: #fff; }
+  .btn-primary:hover { background: #e07218; }
+  .btn-secondary { background: #1a1a24; color: #aaa; border: 1px solid #2a2a38; }
+  .btn-secondary:hover { color: #e2e2e2; }
+
+  .last-checked { font-size: 10px; color: #555; text-align: center; margin-top: 10px; }
+
+  .connecting { color: #555; text-align: center; padding: 20px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+    <div class="logo-text">
+      <span class="logo-techno">TECHNO</span><span class="logo-brain">BRAIN</span>
+      <span class="logo-nexus">/ Nexus</span>
+    </div>
+  </div>
+  <div class="status-dot" id="statusDot"></div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" data-tab="status">Status</div>
+  <div class="tab" data-tab="activity">Activity</div>
+  <div class="tab" data-tab="settings">Settings</div>
+</div>
+
+<!-- STATUS TAB -->
+<div class="panel active" id="tab-status">
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Agent</div>
+      <div class="stat-value" id="agentStatus">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Knowledge base</div>
+      <div class="stat-value orange" id="vectorCount">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">LLM</div>
+      <div class="stat-value" id="llmProvider">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Poll interval</div>
+      <div class="stat-value" id="pollInterval">—</div>
+    </div>
+  </div>
+  <button class="btn btn-secondary" id="triggerPoll">⟳ Poll now</button>
+  <button class="btn btn-secondary" id="triggerIngest" style="margin-top:6px">↑ Re-ingest Salesmate</button>
+  <div class="last-checked" id="lastChecked"></div>
+</div>
+
+<!-- ACTIVITY TAB -->
+<div class="panel" id="tab-activity">
+  <div class="feed-title">Live activity (SSE)</div>
+  <div class="feed" id="activityFeed">
+    <div class="connecting">Connect to Nexus to see live events...</div>
+  </div>
+</div>
+
+<!-- SETTINGS TAB -->
+<div class="panel" id="tab-settings">
+  <div class="field">
+    <label>Nexus URL</label>
+    <input type="url" id="nexusUrl" placeholder="http://localhost:8000">
+  </div>
+  <div class="field">
+    <label>Agent Secret</label>
+    <input type="password" id="nexusSecret" placeholder="Your NEXUS_SECRET">
+  </div>
+  <div class="field">
+    <label>
+      <div class="toggle" id="notifToggle">
+        <div class="toggle-switch" id="notifSwitch"></div>
+        <span>Desktop notifications</span>
+      </div>
+    </label>
+  </div>
+  <button class="btn btn-primary" id="saveSettings">Save settings</button>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
