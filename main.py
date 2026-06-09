@@ -113,6 +113,8 @@ async def poll_gmail():
         print(f"[Poll] Found {len(emails)} new email(s)")
         for email_dict in emails:
             await process_email(email_dict)
+            # Label as processed so it's visible as "handled by Nexus" in Gmail
+            gmail.apply_label(email_dict["id"], config.GMAIL_LABEL)
             await asyncio.sleep(2)   # small delay between emails
     except Exception as e:
         print(f"[Poll] Error: {e}")

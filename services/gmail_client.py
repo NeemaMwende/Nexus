@@ -60,8 +60,11 @@ class GmailClient:
         """
         svc = self._get_service()
 
-        # Query: unread messages with our label
-        query = f"label:{config.GMAIL_LABEL} is:unread"
+        # Search inbox for unread contact-form submissions by subject pattern.
+        # We do NOT filter by the nexus-contact-form label here because Gmail
+        # never applies that label automatically — it's only applied by Nexus
+        # after processing as a "seen" marker.
+        query = 'in:inbox is:unread subject:"has made an enquiry"'
 
         try:
             result = svc.users().messages().list(
@@ -190,6 +193,24 @@ class GmailClient:
             return True
         except HttpError as e:
             print(f"[GmailClient] mark_read error: {e}")
+            return False
+
+    def apply_label(self, message_id: str, label_name: str) -> bool:
+        """Apply a label by name to a message (resolves name → id automatically)."""
+        svc = self._get_service()
+        try:
+            labels = svc.users().labels().list(userId="me").execute().get("labels", [])
+            label_id = next((l["id"] for l in labels if l["name"].lower() == label_name.lower()), None)
+            if not label_id:
+                return False
+            svc.users().messages().modify(
+                userId="me",
+                id=message_id,
+                body={"addLabelIds": [label_id]}
+            ).execute()
+            return True
+        except HttpError as e:
+            print(f"[GmailClient] apply_label error: {e}")
             return False
 
     def ensure_label_exists(self, label_name: str) -> Optional[str]:
