@@ -24,9 +24,10 @@ QDRANT_COLLECTION = os.getenv("QDRANT_COLLECTION", "salesmate_knowledge")
 EMBED_MODEL       = os.getenv("EMBED_MODEL", "nomic-embed-text")
 EMBED_DIM         = int(os.getenv("EMBED_DIM", "768"))
 
-# Salesmate
-SALESMATE_API_KEY  = os.getenv("SALESMATE_API_KEY", "")
-SALESMATE_LINKNAME = os.getenv("SALESMATE_LINKNAME", "technobrain.salesmate.io")
+# Salesmate (login-based, no API key required)
+SALESMATE_URL      = os.getenv("SALESMATE_URL", "https://salesmate.technobraingroup.com")
+SALESMATE_USERNAME = os.getenv("SALESMATE_USERNAME", "")
+SALESMATE_PASSWORD = os.getenv("SALESMATE_PASSWORD", "")
 
 # Database
 DATABASE_URL = os.getenv("DATABASE_URL", "")

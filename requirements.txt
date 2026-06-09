@@ -5,9 +5,9 @@ python-dotenv==1.0.1
 httpx==0.27.0
 
 # Agent framework
-langgraph==0.1.5
-langchain-core==0.2.5
-langchain-community==0.2.5
+langgraph
+langchain-community
+langchain-core
 
 # LLM (free options — Groq API or local Ollama)
 langchain-groq==0.1.3
@@ -27,8 +27,9 @@ phonenumbers==8.13.37
 qdrant-client==1.9.1
 sentence-transformers==3.0.1
 
-# Salesmate API + PDF ingestion
+# Salesmate web scraping + PDF ingestion
 requests==2.32.3
+playwright>=1.44.0
 pypdf==4.2.0
 python-docx==1.1.2
 beautifulsoup4==4.12.3

@@ -8,7 +8,7 @@ from qdrant_client.models import (
     Distance, VectorParams, PointStruct, Filter,
     FieldCondition, MatchValue
 )
-import uuid
+import hashlib, uuid
 import config
 
 
@@ -23,6 +23,14 @@ class VectorStore:
                 port=config.QDRANT_PORT,
             )
         return self._client
+
+    def delete_collection(self) -> None:
+        """Drop and recreate the collection (used before a full re-ingest)."""
+        c = self.client()
+        existing = [col.name for col in c.get_collections().collections]
+        if config.QDRANT_COLLECTION in existing:
+            c.delete_collection(config.QDRANT_COLLECTION)
+            print(f"[Qdrant] Dropped collection '{config.QDRANT_COLLECTION}'")
 
     def ensure_collection(self) -> None:
         """Create the collection if it doesn't exist."""
@@ -39,11 +47,12 @@ class VectorStore:
             print(f"[Qdrant] Created collection '{config.QDRANT_COLLECTION}'")
 
     def upsert(self, texts: list[str], metadatas: list[dict]) -> None:
-        """Embed texts and upsert into Qdrant."""
+        """Embed texts and upsert into Qdrant using deterministic IDs to prevent duplicates."""
         vectors = embed_texts(texts)
         points = [
             PointStruct(
-                id=str(uuid.uuid4()),
+                # SHA-256 of the text → UUID for a stable, content-addressed ID
+                id=str(uuid.UUID(hashlib.sha256(text.encode()).hexdigest()[:32])),
                 vector=vec,
                 payload={**meta, "text": text},
             )
