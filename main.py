@@ -186,8 +186,26 @@ async def lifespan(app: FastAPI):
         id="nexus_poll",
         max_instances=1,     # never run two polls concurrently
     )
+
+    # Daily Salesmate knowledge sync at midnight UTC
+    async def _run_salesmate_sync():
+        from rag.ingest_salesmate import run_incremental_ingest
+        loop = asyncio.get_event_loop()
+        await loop.run_in_executor(None, run_incremental_ingest)
+
+    scheduler.add_job(
+        _run_salesmate_sync,
+        "cron",
+        hour=0,
+        minute=0,
+        id="salesmate_daily_sync",
+        max_instances=1,
+        timezone="UTC",
+    )
+
     scheduler.start()
     print(f"✓ Email poller started (every {config.POLL_INTERVAL}s)")
+    print("✓ Salesmate sync scheduled (daily at 00:00 UTC)")
     print(f"✓ Nexus running at http://localhost:{config.NEXUS_PORT}\n")
 
     yield

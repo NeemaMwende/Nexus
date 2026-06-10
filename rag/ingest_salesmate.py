@@ -1,19 +1,29 @@
 """
-Salesmate → Qdrant ingestion pipeline.
+Salesmate → Qdrant incremental knowledge-sync pipeline.
 
-Logs in to the custom Salesmate instance at SALESMATE_URL using
-SALESMATE_USERNAME / SALESMATE_PASSWORD, crawls every internal page
-with a headless Playwright browser, extracts visible text, and upserts
-chunks to Qdrant as the agent's knowledge base.
+On each run:
+  1. Logs in to Salesmate via Playwright.
+  2. Crawls every internal page.
+  3. Computes an MD5 content hash per page/document.
+  4. Skips pages whose hash hasn't changed since the last run.
+  5. For changed pages: deletes stale Qdrant vectors, re-embeds, re-upserts.
+  6. Writes a human-readable JSON cache to data/salesmate_cache/.
 
-Also downloads and parses any PDF/DOCX/TXT files linked from the site.
+Cache layout:
+  data/salesmate_cache/
+  ├── index.json          ← one entry per URL: hash, title, timestamps, vector count
+  └── pages/
+      └── <md5(url)>.json ← full content + metadata, readable by humans
 
-Run:
+Run manually:
     python -m rag.ingest_salesmate
 
-Or triggered via POST /trigger/ingest inside the running Nexus server.
+Triggered via POST /trigger/ingest from the running Nexus server.
+Scheduled to run daily at midnight UTC via APScheduler in main.py.
 """
-import io, os, sys, time, hashlib
+import io, os, sys, time, hashlib, json
+from datetime import datetime, timezone
+from pathlib import Path
 from urllib.parse import urlparse
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -22,8 +32,68 @@ import requests as _requests
 import config
 from services.qdrant_store import vector_store
 
+# ── Cache paths ───────────────────────────────────────────────────────────────
+
+_NEXUS_ROOT = Path(__file__).parent.parent
+CACHE_DIR   = _NEXUS_ROOT / "data" / "salesmate_cache"
+CACHE_INDEX = CACHE_DIR / "index.json"
+PAGES_DIR   = CACHE_DIR / "pages"
+
+
+# ── Cache helpers ─────────────────────────────────────────────────────────────
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _content_hash(text: str) -> str:
+    return hashlib.md5(text.encode()).hexdigest()
+
+
+def _url_slug(url: str) -> str:
+    return hashlib.md5(url.encode()).hexdigest()
+
+
+def _load_cache_index() -> dict:
+    if CACHE_INDEX.exists():
+        try:
+            return json.loads(CACHE_INDEX.read_text(encoding="utf-8"))
+        except Exception:
+            return {}
+    return {}
+
+
+def _save_cache_index(index: dict) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    tmp = CACHE_INDEX.with_suffix(".tmp")
+    tmp.write_text(json.dumps(index, indent=2, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(CACHE_INDEX)
+
+
+def _save_page_cache(url: str, title: str, content: str, chash: str, updated: bool) -> None:
+    """Write a per-URL JSON file with the full content — readable by humans."""
+    PAGES_DIR.mkdir(parents=True, exist_ok=True)
+    now = _now_iso()
+    page_file = PAGES_DIR / f"{_url_slug(url)}.json"
+    existing: dict = {}
+    if page_file.exists():
+        try:
+            existing = json.loads(page_file.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    data = {
+        "url":          url,
+        "title":        title,
+        "content":      content,
+        "hash":         chash,
+        "last_crawled": now,
+        "last_updated": now if updated else existing.get("last_updated", now),
+    }
+    page_file.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
 # ── Text chunker ──────────────────────────────────────────────────────────────
-# chunking text into chunks with overlap of 50 - to store context
+
 def chunk_text(text: str, chunk_size: int = 400, overlap: int = 50) -> list[str]:
     if not text or not text.strip():
         return []
@@ -38,7 +108,7 @@ def chunk_text(text: str, chunk_size: int = 400, overlap: int = 50) -> list[str]
 
 
 # ── File text extractor ───────────────────────────────────────────────────────
-# extracting text from PDF/DOCX/TXT files
+
 def _extract_file_text(content: bytes, ext: str) -> str:
     if ext == "pdf":
         from pypdf import PdfReader
@@ -64,9 +134,7 @@ _SKIP_URL_PATTERNS = (
 
 _DOCUMENT_EXTS = ("pdf", "docx", "doc", "txt")
 
-# URL path segments that identify document files even without a file extension
 _DOCUMENT_PATH_SEGMENTS = ("/pdf/", "/docx/", "/doc/")
-# URL path segments that identify files we should skip entirely (no text to extract)
 _SKIP_FILE_SEGMENTS = (
     "/mp4/", "/mov/", "/avi/", "/mkv/",
     "/pptx/", "/ppt/", "/xls/", "/xlsx/",
@@ -86,7 +154,6 @@ def _login(page, base_url: str, username: str, password: str) -> bool:
     page.goto(base_url, timeout=30_000)
     page.wait_for_load_state("networkidle", timeout=20_000)
 
-    # Locate email/username field — WordPress uses name="log"; fall back to common selectors
     filled_user = False
     for sel in [
         'input[name="log"]', '#user_login',
@@ -100,7 +167,6 @@ def _login(page, base_url: str, username: str, password: str) -> bool:
             filled_user = True
             break
 
-    # Locate password field — WordPress uses name="pwd"
     filled_pass = False
     for sel in [
         'input[name="pwd"]', '#user_pass',
@@ -116,7 +182,6 @@ def _login(page, base_url: str, username: str, password: str) -> bool:
         print("[Scraper] Could not find login form fields.")
         return False
 
-    # Submit the form — WordPress uses id="wp-submit"
     submitted = False
     for sel in [
         '#wp-submit', 'input[type="submit"]',
@@ -158,7 +223,6 @@ def _page_text(page) -> str:
         except Exception:
             continue
 
-    # Fallback to whole body
     try:
         return page.locator("body").inner_text()
     except Exception:
@@ -166,10 +230,7 @@ def _page_text(page) -> str:
 
 
 def _discover_links(page, base_domain: str) -> tuple[list[str], list[str]]:
-    """
-    Return (page_links, document_links) found on the current page.
-    Both lists contain absolute URLs, deduplicated, within base_domain.
-    """
+    """Return (page_links, document_links) found on the current page."""
     try:
         hrefs = page.eval_on_selector_all("a[href]", "els => els.map(e => e.href)")
     except Exception:
@@ -185,15 +246,12 @@ def _discover_links(page, base_domain: str) -> tuple[list[str], list[str]]:
 
         path_lower = parsed.path.lower()
 
-        # Skip binary/media files we can't extract text from
         if any(seg in path_lower for seg in _SKIP_FILE_SEGMENTS):
             continue
 
         ext = path_lower.rsplit(".", 1)[-1] if "." in path_lower else ""
         clean = f"{parsed.scheme}://{parsed.netloc}{parsed.path}"
 
-        # Classify as document if it has a known doc extension OR
-        # if the URL path contains a document-type segment (e.g. /pdf/, /docx/)
         is_doc = ext in _DOCUMENT_EXTS or any(seg in path_lower for seg in _DOCUMENT_PATH_SEGMENTS)
         if is_doc:
             doc_links.append(clean)
@@ -206,20 +264,22 @@ def _discover_links(page, base_domain: str) -> tuple[list[str], list[str]]:
 # ── Document downloader ───────────────────────────────────────────────────────
 
 def _infer_doc_ext(url: str) -> str:
-    """Infer file extension from URL path, including extensionless S3-style paths."""
     path = urlparse(url).path.lower()
-    # Extension present (e.g. file.pdf)
     if "." in path.rsplit("/", 1)[-1]:
         return path.rsplit(".", 1)[-1]
-    # No extension — look for type-named path segment (/pdf/, /docx/, /doc/, /txt/)
     for seg in ("/pdf/", "/docx/", "/doc/", "/txt/"):
         if seg in path:
             return seg.strip("/")
     return ""
 
 
-def _ingest_document(file_url: str, cookies: list[dict], total_ref: list) -> None:
-    """Download a file from file_url using the browser session cookies and ingest it."""
+def _ingest_document(
+    file_url: str,
+    cookies: list[dict],
+    stats: dict,
+    cache_index: dict,
+) -> None:
+    """Download a file, compare hash against cache, ingest only if changed."""
     ext = _infer_doc_ext(file_url)
     filename = file_url.rsplit("/", 1)[-1]
 
@@ -231,15 +291,34 @@ def _ingest_document(file_url: str, cookies: list[dict], total_ref: list) -> Non
         session.cookies.set(c["name"], c["value"], domain=c.get("domain", ""))
 
     try:
-        resp = session.get(file_url, timeout=30, verify=False)
+        # verify=False: internal Salesmate server uses a self-signed certificate
+        resp = session.get(file_url, timeout=30, verify=False)  # noqa: S501
         resp.raise_for_status()
         text = _extract_file_text(resp.content, ext)
         if not text or len(text.strip()) < 50:
             return
 
-        chunks = chunk_text(text)
+        chash  = _content_hash(text)
+        cached = cache_index.get(file_url, {})
+
+        if cached.get("hash") == chash:
+            cached["last_crawled"] = _now_iso()
+            cache_index[file_url] = cached
+            stats["skipped"] += 1
+            print(f"  [Doc] {filename} — unchanged (skipped)")
+            return
+
+        if cached:
+            vector_store.delete_by_url(file_url)
+            stats["updated"] += 1
+            label = "updated"
+        else:
+            stats["new"] += 1
+            label = "new"
+
+        chunks  = chunk_text(text)
         file_id = hashlib.md5(file_url.encode()).hexdigest()[:12]
-        metas = [{
+        metas   = [{
             "source":      "salesmate_web",
             "object_type": "document",
             "object_id":   file_id,
@@ -248,13 +327,78 @@ def _ingest_document(file_url: str, cookies: list[dict], total_ref: list) -> Non
         } for _ in chunks]
 
         vector_store.upsert(chunks, metas)
-        total_ref[0] += len(chunks)
-        print(f"  [Doc] {filename} → {len(chunks)} chunks")
+        stats["chunks_added"] += len(chunks)
+
+        now = _now_iso()
+        cache_index[file_url] = {
+            "hash":         chash,
+            "title":        filename,
+            "last_crawled": now,
+            "last_updated": now,
+            "vector_count": len(chunks),
+            "type":         "document",
+        }
+        _save_page_cache(file_url, filename, text, chash, updated=True)
+        print(f"  [Doc] {filename} → {len(chunks)} chunks ({label})")
+
     except Exception as e:
         print(f"  [Doc] Skipped {filename}: {e}")
 
 
 # ── Main crawler ──────────────────────────────────────────────────────────────
+
+def _sync_page_content(
+    url: str,
+    title: str,
+    content: str,
+    stats: dict,
+    cache_index: dict,
+) -> None:
+    """Compare hash, delete stale vectors if changed, upsert new chunks."""
+    chash  = _content_hash(content)
+    cached = cache_index.get(url, {})
+
+    if cached.get("hash") == chash:
+        cached["last_crawled"] = _now_iso()
+        cache_index[url] = cached
+        _save_page_cache(url, cached.get("title", title), content, chash, updated=False)
+        stats["skipped"] += 1
+        print(f"  → '{title}' — unchanged (skipped)")
+        return
+
+    if cached:
+        vector_store.delete_by_url(url)
+        stats["updated"] += 1
+        label = "updated"
+    else:
+        stats["new"] += 1
+        label = "new"
+
+    chunks = chunk_text(content)
+    if chunks:
+        pid   = hashlib.md5(url.encode()).hexdigest()[:12]
+        metas = [{
+            "source":      "salesmate_web",
+            "object_type": "page",
+            "object_id":   pid,
+            "object_name": title,
+            "url":         url,
+        } for _ in chunks]
+        vector_store.upsert(chunks, metas)
+        stats["chunks_added"] += len(chunks)
+        print(f"  → '{title}' — {len(chunks)} chunks ({label})")
+
+    now = _now_iso()
+    cache_index[url] = {
+        "hash":         chash,
+        "title":        title,
+        "last_crawled": now,
+        "last_updated": now,
+        "vector_count": len(chunks) if chunks else 0,
+        "type":         "page",
+    }
+    _save_page_cache(url, title, content, chash, updated=True)
+
 
 def _scrape_one_page(
     page,
@@ -263,14 +407,14 @@ def _scrape_one_page(
     visited: set,
     to_visit: list,
     doc_queue: list,
-    total: list,
+    stats: dict,
+    cache_index: dict,
 ) -> None:
-    """Navigate to url, ingest its text, and enqueue newly discovered links."""
+    """Navigate to url, compare hash, upsert only if content changed."""
     print(f"[Page] {url}")
     try:
         page.goto(url, timeout=25_000, wait_until="networkidle")
     except Exception:
-        # Fallback for pages that never reach networkidle (long-polling, etc.)
         page.goto(url, timeout=25_000, wait_until="load")
     time.sleep(0.8)
 
@@ -278,19 +422,7 @@ def _scrape_one_page(
     if text and len(text.strip()) > 100:
         title   = page.title() or url
         content = f"Page: {title}\nURL: {url}\n\n{text}"
-        chunks  = chunk_text(content)
-        if chunks:
-            pid   = hashlib.md5(url.encode()).hexdigest()[:12]
-            metas = [{
-                "source":      "salesmate_web",
-                "object_type": "page",
-                "object_id":   pid,
-                "object_name": title,
-                "url":         url,
-            } for _ in chunks]
-            vector_store.upsert(chunks, metas)
-            total[0] += len(chunks)
-            print(f"  → '{title}' — {len(chunks)} chunks")
+        _sync_page_content(url, title, content, stats, cache_index)
 
     new_pages, new_docs = _discover_links(page, base_domain)
     for lnk in new_pages:
@@ -301,8 +433,14 @@ def _scrape_one_page(
             doc_queue.append(doc)
 
 
-def _crawl_all_pages(page, base_url: str, base_domain: str, total: list) -> list:
-    """BFS over all internal pages; return the collected document URLs."""
+def _crawl_all_pages(
+    page,
+    base_url: str,
+    base_domain: str,
+    stats: dict,
+    cache_index: dict,
+) -> list:
+    """BFS over all internal pages; return collected document URLs."""
     visited:   set[str]  = set()
     to_visit:  list[str] = [base_url, page.url]
     doc_queue: list[str] = []
@@ -313,14 +451,21 @@ def _crawl_all_pages(page, base_url: str, base_domain: str, total: list) -> list
             continue
         visited.add(url)
         try:
-            _scrape_one_page(page, url, base_domain, visited, to_visit, doc_queue, total)
+            _scrape_one_page(page, url, base_domain, visited, to_visit, doc_queue, stats, cache_index)
         except Exception as exc:
             print(f"  ✗ {url}: {exc}")
 
     return doc_queue
 
 
-def run_full_ingest() -> None:
+# ── Public entry points ───────────────────────────────────────────────────────
+
+def run_incremental_ingest() -> None:
+    """
+    Incremental sync: only re-embed pages whose content hash has changed.
+    Safe to call as often as needed — unchanged pages are skipped entirely.
+    Writes a human-readable JSON cache to data/salesmate_cache/.
+    """
     from playwright.sync_api import sync_playwright
 
     base_url    = config.SALESMATE_URL.rstrip("/")
@@ -332,10 +477,11 @@ def run_full_ingest() -> None:
         print("[Scraper] SALESMATE_USERNAME / SALESMATE_PASSWORD not set in .env — aborting.")
         return
 
-    print("\n=== Nexus Salesmate Web Scraper ===\n")
+    print("\n=== Nexus Salesmate Knowledge Sync ===\n")
     vector_store.ensure_collection()
 
-    total = [0]
+    cache_index = _load_cache_index()
+    stats: dict = {"new": 0, "updated": 0, "skipped": 0, "chunks_added": 0}
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch(headless=True, args=["--no-sandbox"])
@@ -353,19 +499,31 @@ def run_full_ingest() -> None:
             browser.close()
             return
 
-        doc_queue = _crawl_all_pages(page, base_url, base_domain, total)
+        doc_queue = _crawl_all_pages(page, base_url, base_domain, stats, cache_index)
 
         if doc_queue:
-            print(f"\n[Docs] Downloading {len(doc_queue)} document(s)...")
+            print(f"\n[Docs] Checking {len(doc_queue)} document(s)...")
             cookies = context.cookies()
             for doc_url in doc_queue:
-                _ingest_document(doc_url, cookies, total)
+                _ingest_document(doc_url, cookies, stats, cache_index)
 
         browser.close()
 
+    _save_cache_index(cache_index)
+
     count = vector_store.count()
-    print(f"\n✓ Scrape complete — {total[0]} new chunks added, {count} total vectors in Qdrant\n")
+    print(
+        f"\n✓ Sync complete — "
+        f"{stats['new']} new | {stats['updated']} updated | {stats['skipped']} skipped"
+        f" | +{stats['chunks_added']} chunks | {count} total vectors in Qdrant"
+    )
+    print(f"  Cache: {CACHE_INDEX}\n")
+
+
+def run_full_ingest() -> None:
+    """Backward-compatible alias — now runs incrementally."""
+    run_incremental_ingest()
 
 
 if __name__ == "__main__":
-    run_full_ingest()
+    run_incremental_ingest()

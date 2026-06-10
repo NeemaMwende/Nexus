@@ -18,7 +18,7 @@ Intents:
 - demo_request         : wants a demo, trial, presentation, or proof of concept
 - partnership          : wants to partner, resell, or collaborate
 - job_application      : looking for employment, internship, attachment
-- support_request      : existing customer needing help or support
+- support_request      : existing customer needing help or support 
 - general_information  : general question about the company
 
 Pick the single best match. Be confident — do not return unknown unless truly impossible."""

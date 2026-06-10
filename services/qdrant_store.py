@@ -6,7 +6,7 @@ from typing import Optional
 from qdrant_client import QdrantClient as _QdrantClient
 from qdrant_client.models import (
     Distance, VectorParams, PointStruct, Filter,
-    FieldCondition, MatchValue
+    FieldCondition, MatchValue, FilterSelector
 )
 import hashlib, uuid
 import config
@@ -23,6 +23,17 @@ class VectorStore:
                 port=config.QDRANT_PORT,
             )
         return self._client
+
+    def delete_by_url(self, url: str) -> None:
+        """Delete all vectors whose payload.url matches the given URL."""
+        self.client().delete(
+            collection_name=config.QDRANT_COLLECTION,
+            points_selector=FilterSelector(
+                filter=Filter(
+                    must=[FieldCondition(key="url", match=MatchValue(value=url))]
+                )
+            ),
+        )
 
     def delete_collection(self) -> None:
         """Drop and recreate the collection (used before a full re-ingest)."""
