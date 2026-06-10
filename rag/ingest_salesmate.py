@@ -23,7 +23,7 @@ import config
 from services.qdrant_store import vector_store
 
 # ── Text chunker ──────────────────────────────────────────────────────────────
-
+# chunking text into chunks with overlap of 50 - to store context
 def chunk_text(text: str, chunk_size: int = 400, overlap: int = 50) -> list[str]:
     if not text or not text.strip():
         return []
@@ -38,7 +38,7 @@ def chunk_text(text: str, chunk_size: int = 400, overlap: int = 50) -> list[str]
 
 
 # ── File text extractor ───────────────────────────────────────────────────────
-
+# extracting text from PDF/DOCX/TXT files
 def _extract_file_text(content: bytes, ext: str) -> str:
     if ext == "pdf":
         from pypdf import PdfReader

@@ -3,6 +3,7 @@ Nexus main entry point.
 Starts FastAPI server + APScheduler background poll.
 """
 import asyncio, json, time
+from collections import deque
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
@@ -23,6 +24,7 @@ from services          import db
 # ── SSE event bus (in-memory queue per connected client) ─────────────────────
 
 _sse_clients: list[asyncio.Queue] = []
+_recent_log: deque = deque(maxlen=100)   # last 100 terminal events for dashboard hydration
 
 
 async def broadcast(event: dict):
@@ -36,25 +38,28 @@ async def broadcast(event: dict):
 async def process_email(email_dict: dict, submission_id: int = None):
     """
     Build initial NexusState from a Gmail message dict and run the graph.
-    Called by both the poller and the webhook endpoint.
+    Streams per-node SSE events as each stage completes.
     """
-    await broadcast({
-        "type":    "processing_started",
-        "email_id": email_dict.get("id"),
-        "subject": email_dict.get("subject", ""),
-        "message": f"Processing: {email_dict.get('subject', 'new email')}",
-    })
+    email_id = email_dict.get("id", "")
+    subject  = email_dict.get("subject", "")
+    ts       = int(time.time() * 1000)
+
+    started = {
+        "type":     "processing_started",
+        "email_id": email_id,
+        "subject":  subject,
+        "ts":       ts,
+    }
+    await broadcast(started)
+    _recent_log.appendleft(started)
 
     initial_state: NexusState = {
-        # Gmail fields
-        "email_id":        email_dict.get("id", ""),
+        "email_id":        email_id,
         "thread_id":       email_dict.get("thread_id", ""),
-        "subject":         email_dict.get("subject", ""),
+        "subject":         subject,
         "sender_address":  email_dict.get("sender", ""),
         "raw_html":        email_dict.get("body_html", ""),
         "raw_text":        email_dict.get("body_text", ""),
-
-        # Will be populated by nodes
         "submission_id":   submission_id,
         "sender_name":     "",
         "sender_email":    "",
@@ -75,27 +80,54 @@ async def process_email(email_dict: dict, submission_id: int = None):
         "status_message":  "Starting...",
     }
 
-    # Run graph synchronously in a thread pool (LangGraph is sync)
     loop = asyncio.get_event_loop()
+    final_state: dict = {}
+
+    def run_graph():
+        nonlocal final_state
+        for chunk in nexus_graph.stream(initial_state):
+            for node_name, node_state in chunk.items():
+                final_state = node_state
+                node_event = {
+                    "type":     "node_complete",
+                    "email_id": email_id,
+                    "node":     node_name,
+                    "status":   node_state.get("status_message", ""),
+                    "ts":       int(time.time() * 1000),
+                }
+                asyncio.run_coroutine_threadsafe(broadcast(node_event), loop)
+
     try:
-        final_state = await loop.run_in_executor(
-            None,
-            lambda: nexus_graph.invoke(initial_state)
-        )
-        await broadcast({
-            "type":         "processing_done",
-            "email_id":     email_dict.get("id"),
-            "reply_sent":   final_state.get("reply_sent"),
-            "intent":       final_state.get("intent"),
-            "message":      final_state.get("status_message"),
-        })
+        await loop.run_in_executor(None, run_graph)
+
+        done = {
+            "type":          "processing_done",
+            "email_id":      email_id,
+            "subject":       subject,
+            "sender_name":   final_state.get("sender_name", ""),
+            "sender_email":  final_state.get("sender_email", ""),
+            "intent":        final_state.get("intent", ""),
+            "reply_sent":    final_state.get("reply_sent", False),
+            "is_spam":       final_state.get("is_spam", False),
+            "is_valid_email": final_state.get("is_valid_email", True),
+            "is_valid_phone": final_state.get("is_valid_phone", True),
+            "message":       final_state.get("status_message", ""),
+            "ts":            int(time.time() * 1000),
+        }
+        await broadcast(done)
+        _recent_log.appendleft(done)
+
     except Exception as e:
-        print(f"[Nexus] Graph error for {email_dict.get('id')}: {e}")
-        await broadcast({
-            "type":    "processing_error",
-            "email_id": email_dict.get("id"),
-            "message": str(e),
-        })
+        print(f"[Nexus] Graph error for {email_id}: {e}")
+        err = {
+            "type":     "processing_error",
+            "email_id": email_id,
+            "subject":  subject,
+            "message":  str(e),
+            "ts":       int(time.time() * 1000),
+        }
+        await broadcast(err)
+        _recent_log.appendleft(err)
 
 
 # ── Gmail poller ──────────────────────────────────────────────────────────────
@@ -172,7 +204,7 @@ app = FastAPI(title="Nexus Agent", version="1.0.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],
+    allow_origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -201,11 +233,17 @@ async def root():
 @app.get("/health")
 async def health():
     return {
-        "status": "ok",
+        "status":        "ok",
         "qdrant_vectors": vector_store.count(),
         "poll_interval":  config.POLL_INTERVAL,
         "llm_provider":   config.LLM_PROVIDER,
     }
+
+
+@app.get("/api/recent")
+async def get_recent():
+    """Return the in-memory log of recent events for dashboard hydration."""
+    return {"events": list(_recent_log)}
 
 
 @app.post("/webhook/contact")

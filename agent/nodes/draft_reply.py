@@ -21,7 +21,8 @@ STRICT RULES:
 6. Keep it concise: 3–5 short paragraphs. No walls of text.
 7. Sign off as "TechnoBrain Team" — never claim to be a human.
 8. Write in plain HTML using only <p>, <strong>, <br> tags — no CSS, no divs.
-9. Return ONLY the email body HTML. No subject line, no preamble."""
+9. Return ONLY the email body HTML. No subject line, no preamble.
+10.If a user asks about a particular product or project give a detailed explanation of its about before transfering them to an assigned person for it"""
 
 # Intent-specific call-to-action guidance injected per intent
 INTENT_CTA = {
