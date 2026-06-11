@@ -1,0 +1,602 @@
+{
+  "https://www.technobraingroup.com": {
+    "hash": "daf8550ecd0cec7cb02ab95166e3609d",
+    "title": "Techno Brain",
+    "last_crawled": "2026-06-11T08:09:47Z",
+    "last_updated": "2026-06-11T08:09:47Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/techno-brain-privacy-policy/": {
+    "hash": "0f1e0700916d60ef97f3f4e6f04099f9",
+    "title": "Techno Brain Privacy Policy – Techno Brain",
+    "last_crawled": "2026-06-11T08:09:53Z",
+    "last_updated": "2026-06-11T08:09:53Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/": {
+    "hash": "3831fe95bc180177c2f24d9e562c790c",
+    "title": "Techno Brain",
+    "last_crawled": "2026-06-11T08:09:59Z",
+    "last_updated": "2026-06-11T08:09:59Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/engineering-2/": {
+    "hash": "8b1efa33eb903a968c40caf7535b8ebc",
+    "title": "Engineering – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:07Z",
+    "last_updated": "2026-06-11T08:10:07Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/solutions/": {
+    "hash": "7b4f3581e6a4f78f06e419e22bbafd02",
+    "title": "Solutions – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:13Z",
+    "last_updated": "2026-06-11T08:10:13Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/identity-management/": {
+    "hash": "647d9f0542c671056a4c2da95f3c3ad4",
+    "title": "Identity Management – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:19Z",
+    "last_updated": "2026-06-11T08:10:19Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/tax-and-customs/": {
+    "hash": "7908c18a3b9378f74339ddedac5aa057",
+    "title": "Tax and Customs – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:26Z",
+    "last_updated": "2026-06-11T08:10:26Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/public-finance-management/": {
+    "hash": "f0f6ec92a3ab51627d64880be7ae4330",
+    "title": "Public Finance Management – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:32Z",
+    "last_updated": "2026-06-11T08:10:32Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/revenue-management-system/": {
+    "hash": "53e373f6745d1e4013e6feaf634acd26",
+    "title": "Revenue Management System – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:40Z",
+    "last_updated": "2026-06-11T08:10:40Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/robotics-process-automation/": {
+    "hash": "a1f7c4cf6254f4a0e0ab15fc31ea150f",
+    "title": "Robotics Process Automation – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:51Z",
+    "last_updated": "2026-06-11T08:10:51Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/cloud-services/": {
+    "hash": "58c4fad12a7c3eb8c6b0876876b18bb8",
+    "title": "Cloud Services – Techno Brain",
+    "last_crawled": "2026-06-11T08:10:58Z",
+    "last_updated": "2026-06-11T08:10:58Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/cloud-migration/": {
+    "hash": "0ebd6810beb9606f94504af1fffb4124",
+    "title": "Cloud Migration – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:05Z",
+    "last_updated": "2026-06-11T08:11:05Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/devops/": {
+    "hash": "6548e2e1d735237210270997750dd335",
+    "title": "DevOps – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:11Z",
+    "last_updated": "2026-06-11T08:11:11Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/finops/": {
+    "hash": "5af2ff49b382718b76ea09094ba78184",
+    "title": "FinOps – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:18Z",
+    "last_updated": "2026-06-11T08:11:18Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/generative-ai/": {
+    "hash": "8995400d387429d39decdbc9520e770b",
+    "title": "Generative AI – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:25Z",
+    "last_updated": "2026-06-11T08:11:25Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/managed-cloud-services/": {
+    "hash": "a3425172d7192c87cda3479e034a10bc",
+    "title": "Managed Cloud Services – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:32Z",
+    "last_updated": "2026-06-11T08:11:32Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/microsoft-workloads/": {
+    "hash": "ca19a51d1f08a43db314b4d242f2a6b1",
+    "title": "Microsoft Workloads – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:38Z",
+    "last_updated": "2026-06-11T08:11:38Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/bpo/": {
+    "hash": "c508d473b5d3d320757abc924a522a02",
+    "title": "BPO – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:51Z",
+    "last_updated": "2026-06-11T08:11:51Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/business-solutions/": {
+    "hash": "e0862ce670d52786c03fc7e8ea9c7100",
+    "title": "Business Solutions – Techno Brain",
+    "last_crawled": "2026-06-11T08:11:59Z",
+    "last_updated": "2026-06-11T08:11:59Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/compliance/": {
+    "hash": "8e6b1dc45da7dcbefae12cccdb83ae7c",
+    "title": "Compliance – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:06Z",
+    "last_updated": "2026-06-11T08:12:06Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/about-us/": {
+    "hash": "2aa4ce4d0c8c319c1c27fa98152ba669",
+    "title": "About Us – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:16Z",
+    "last_updated": "2026-06-11T08:12:16Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/careers/": {
+    "hash": "c273dfe0fcd690f5cc5dc70bccf1777c",
+    "title": "Careers – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:25Z",
+    "last_updated": "2026-06-11T08:12:25Z",
+    "vector_count": 3,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/contacts/": {
+    "hash": "a3d9422c51ed8faf03c87c349fd3daa4",
+    "title": "Contacts – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:31Z",
+    "last_updated": "2026-06-11T08:12:31Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/corporate-governance/": {
+    "hash": "b578048b7398d1bb589f7066775e57cd",
+    "title": "Corporate Governance – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:37Z",
+    "last_updated": "2026-06-11T08:12:37Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/foundation/": {
+    "hash": "c6af399873c226884a4d2407ec077279",
+    "title": "Foundation – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:43Z",
+    "last_updated": "2026-06-11T08:12:43Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/history/": {
+    "hash": "a05b8c7e22c768eb0d7f287b97487904",
+    "title": "History – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:50Z",
+    "last_updated": "2026-06-11T08:12:50Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news-events/": {
+    "hash": "ff0bc77ef0700cd09d17f975128015e2",
+    "title": "News and Events – Techno Brain",
+    "last_crawled": "2026-06-11T08:12:56Z",
+    "last_updated": "2026-06-11T08:12:56Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/our-people/": {
+    "hash": "95946ef84617a7e5d7b53730a1b86bcb",
+    "title": "Our People – Techno Brain",
+    "last_crawled": "2026-06-11T08:13:13Z",
+    "last_updated": "2026-06-11T08:13:13Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/search/": {
+    "hash": "472192a4e9b4bc1666a6d207e1eced79",
+    "title": "Search – Techno Brain",
+    "last_crawled": "2026-06-11T08:13:19Z",
+    "last_updated": "2026-06-11T08:13:19Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/techno-brain-earns-back-to-back-great-place-to-work-certification-for-2025-clinches-top-spot-for-gen-z-engagement/": {
+    "hash": "63ad1707302c4cab7a700bb49acd818e",
+    "title": "Techno Brain Earns Back-to-Back Great Place To Work® Certification for 2025, Clinches Top Spot for Gen-Z Engagement – Techno Brain",
+    "last_crawled": "2026-06-11T08:13:28Z",
+    "last_updated": "2026-06-11T08:13:28Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/were-officially-great-place-to-work-certifiedtm/": {
+    "hash": "d03f5230b8c16b8d50bc9bacba896cc8",
+    "title": "We’re Officially Great Place To Work® CertifiedTM – Techno Brain",
+    "last_crawled": "2026-06-11T08:13:34Z",
+    "last_updated": "2026-06-11T08:13:34Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/redp-annual-student-conference-at-techno-brain-group/": {
+    "hash": "b56998e816b9a7353246e3f3138fb801",
+    "title": "Red(P) Annual Student Conference At Techno Brain Group – Techno Brain",
+    "last_crawled": "2026-06-11T08:13:43Z",
+    "last_updated": "2026-06-11T08:13:43Z",
+    "vector_count": 3,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/techno-brain-recognized-as-one-of-the-firms-pioneering-africas-integration/": {
+    "hash": "010ccc4f40a4771a1d7a034b5327ab10",
+    "title": "Techno Brain Recognized As One Of The Firms Pioneering Africa’s Integration – Techno Brain",
+    "last_crawled": "2026-06-11T08:13:50Z",
+    "last_updated": "2026-06-11T08:13:50Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/gra-exceeded-2018-domestic-tax-collection-target-with-techno-brain-trips-solution/": {
+    "hash": "c8bf4abd755289d83ab80c5f5255d1e7",
+    "title": "GRA Exceeded 2018 Domestic Tax Collection Target With Techno Brain Trips Solution – Techno Brain",
+    "last_crawled": "2026-06-11T08:13:56Z",
+    "last_updated": "2026-06-11T08:13:56Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/a-transformational-journey-techno-brains-aws-partner-program-recognition/": {
+    "hash": "a2da15577f348bb8ab9a481d7081f3bf",
+    "title": "A Transformational Journey: Techno Brain’s AWS Partner Program Recognition – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:02Z",
+    "last_updated": "2026-06-11T08:14:02Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/": {
+    "hash": "9b3e901ae7cdc1b08f83493ebc65db98",
+    "title": "Impact – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:11Z",
+    "last_updated": "2026-06-11T08:14:11Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/enhancing-customer-experience-for-a-large-us-health-care-provider/": {
+    "hash": "70a093bf22094b1ccd2c2a9d5172de46",
+    "title": "Enhancing Customer Experience for a Large US Health Care Provider – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:19Z",
+    "last_updated": "2026-06-11T08:14:19Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/integrated-financial-management-information-system-ifmis-ethiopia/": {
+    "hash": "5b8254abfd79c61d5b5e17bea5a3fb3c",
+    "title": "Intergrated Finacial Management Information System (IFMIS) Ethopia – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:25Z",
+    "last_updated": "2026-06-11T08:14:25Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/robotics-process-automation-for-safaricom/": {
+    "hash": "550ddf85a83d7557e0cabcd3d637d9b3",
+    "title": "Robotics Process Automation for Safaricom – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:31Z",
+    "last_updated": "2026-06-11T08:14:31Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/tax-solutions-for-malawi-revenue-authority/": {
+    "hash": "ea48568520b9b0cd26f15c8824e90863",
+    "title": "Tax solutions for Malawi Revenue Authority – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:37Z",
+    "last_updated": "2026-06-11T08:14:37Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/online-type-approval-system-for-communications-regulatory-authorities/": {
+    "hash": "1942fa7a63b3e39c2fda28efc1716ded",
+    "title": "Online Type Approval System for Communications Regulatory Authorities – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:45Z",
+    "last_updated": "2026-06-11T08:14:45Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/enterprise-resource-planning-erp-system-for-beverage-manufacturing-distributing-companies/": {
+    "hash": "d9b94b71cecdea4219a2ac68c7e5fd76",
+    "title": "Enterprise Resource Planning (ERP) System for Beverage Manufacturing & Distributing Companies – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:52Z",
+    "last_updated": "2026-06-11T08:14:52Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/stories/techno-brain-unveils-first-microsoft-software-testing-centre-in-africa-2/": {
+    "hash": "74017a5bcff9ef1b1db7529e71b6d919",
+    "title": "Techno Brain Unveils First Microsoft Software Testing Centre In Africa – Techno Brain",
+    "last_crawled": "2026-06-11T08:14:58Z",
+    "last_updated": "2026-06-11T08:14:58Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/feedback-triage/": {
+    "hash": "b789659e78f1999f830b59abb0d2f9ac",
+    "title": "Feedback Triage – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:04Z",
+    "last_updated": "2026-06-11T08:15:04Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/privacy-compliance/": {
+    "hash": "5ac0a6ba214d565c89de330c9ddcbcc2",
+    "title": "Privacy & Compliance – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:11Z",
+    "last_updated": "2026-06-11T08:15:11Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/enterprise-security-testing-for-american-multinational-technology-corporation-2/": {
+    "hash": "147f04897b6525b9f361b51bffb01a79",
+    "title": "Enterprise Security Testing for American Multinational Technology Corporation – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:18Z",
+    "last_updated": "2026-06-11T08:15:18Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/private-sector/": {
+    "hash": "c7fa79710f338947b1ebef6a599ea90c",
+    "title": "Private Sector – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:25Z",
+    "last_updated": "2026-06-11T08:15:25Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/zimra-electronic-cargo-tracking-system/": {
+    "hash": "0804fb383464a7819fa3eccf00b17768",
+    "title": "Zimra- Electronic Cargo Tracking System – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:31Z",
+    "last_updated": "2026-06-11T08:15:31Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/automatic-fingerprint-identification-systemafis-based-criminal-tracking-systemcts-for-police-departments/": {
+    "hash": "21db0d30b908e7ec575a25bfe1fb7b97",
+    "title": "Automatic Fingerprint Identification System(AFIS) based Criminal Tracking System(CTS) For Police Departments – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:38Z",
+    "last_updated": "2026-06-11T08:15:38Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/integrated-management-information-system-for-national-parks-2/": {
+    "hash": "aa7e95410c1ef3127aaa1bc60e688206",
+    "title": "Integrated Management Information System for National Parks – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:45Z",
+    "last_updated": "2026-06-11T08:15:45Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/backend-processing-of-loyalty-points-though-robotic-process-automation-rpa/": {
+    "hash": "e19ade76c6c4fbf19ee53f30b1d1122b",
+    "title": "Backend Processing Of Loyalty Points Though Robotic Process Automation (RPA) – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:51Z",
+    "last_updated": "2026-06-11T08:15:51Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/revenue-reconciliation-for-an-airline-through-robotic-processes-automation-rpa/": {
+    "hash": "293988398fac1d94b87316768c10b721",
+    "title": "Revenue Reconciliation For An Airline Through Robotic Processes Automation (RPA) – Techno Brain",
+    "last_crawled": "2026-06-11T08:15:57Z",
+    "last_updated": "2026-06-11T08:15:57Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/improvement-of-operational-efficiency-and-customer-experience-through-robotic-process-automation-on-rpa/": {
+    "hash": "c213cac8bfcecf80def94c45302bb98e",
+    "title": "Improvement Of Operational Efficiency And Customer Experience Through Robotic Process Automation On (RPA) – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:04Z",
+    "last_updated": "2026-06-11T08:16:04Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/malawi-revenue-authority/": {
+    "hash": "5df07b3fabb2c6875a5c0ef4e37089ad",
+    "title": "Malawi Revenue Authority – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:11Z",
+    "last_updated": "2026-06-11T08:16:11Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/barton-law-group/": {
+    "hash": "e7af3948a583f1056c5a2c6dbe5d220a",
+    "title": "Barton Law Group – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:18Z",
+    "last_updated": "2026-06-11T08:16:18Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/improvement-of-customer-experience-order-placement-delivery-through-the-contact-center/": {
+    "hash": "026001fbea83bcb8010ec94ae0a7a5b5",
+    "title": "Improvement Of Customer Experience, Order Placement & Delivery Through The Contact Center – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:24Z",
+    "last_updated": "2026-06-11T08:16:24Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/improvement-of-revenue-generation-through-telesales-campaign/": {
+    "hash": "9788d81634e79148558f56fc165540ba",
+    "title": "Improvement Of Revenue Generation Through Telesales Campaign – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:30Z",
+    "last_updated": "2026-06-11T08:16:30Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/osf-implementation-of-serenic-navigator/": {
+    "hash": "71f7a76ceebf336addb1be826983c65b",
+    "title": "OSF Implementation of Serenic Navigator – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:37Z",
+    "last_updated": "2026-06-11T08:16:37Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/impact/technical-support-services-for-pact/": {
+    "hash": "5f27ffb4b8eacbd448c6c35c2dc07673",
+    "title": "Technical Support Services for Pact – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:43Z",
+    "last_updated": "2026-06-11T08:16:43Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/careers-2/": {
+    "hash": "227da63ae7a5085a28b3167b06a13970",
+    "title": "Page not found – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:48Z",
+    "last_updated": "2026-06-11T08:16:48Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/partners-alliances/": {
+    "hash": "61d5c8a2a0dcb685a8a775d591b883f6",
+    "title": "Partners/Alliances – Techno Brain",
+    "last_crawled": "2026-06-11T08:16:54Z",
+    "last_updated": "2026-06-11T08:16:54Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/join-our-talent-community": {
+    "hash": "96f3048161cde10e8cbd67f96a196648",
+    "title": "Join Our Talent Community – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:03Z",
+    "last_updated": "2026-06-11T08:17:03Z",
+    "vector_count": 3,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/head-pre-sales-solution-strategy/": {
+    "hash": "746184cac1946dfed82e2cb48c1ec9f5",
+    "title": "Head – Pre-Sales & Solution Strategy – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:10Z",
+    "last_updated": "2026-06-11T08:17:10Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/sales-manager/": {
+    "hash": "85876cea614ede4aa8511ff6653dc788",
+    "title": "Sales Manager – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:17Z",
+    "last_updated": "2026-06-11T08:17:17Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/sales-executive-tanzania/": {
+    "hash": "9def86ef50994faacf2000c970ea2eaf",
+    "title": "Sales Executive – Tanzania – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:24Z",
+    "last_updated": "2026-06-11T08:17:24Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/job-list": {
+    "hash": "76138d5718d528f4b16ef32ddc1946fb",
+    "title": "All Jobs – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:31Z",
+    "last_updated": "2026-06-11T08:17:31Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/techno-brain-achieves-select-tier-partner-status/": {
+    "hash": "0e7479eb6481f65ada8acc3b5646f6f4",
+    "title": "Techno Brain Achieves Select Tier Partner Status – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:37Z",
+    "last_updated": "2026-06-11T08:17:37Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/news/celebrating-5-years-of-partnership-with-microsoft-a-monumental-moment-in-techno-brains-journey/": {
+    "hash": "bd499f3f821ae2073747ab5552fdcf3e",
+    "title": "Celebrating 5 Years Of Partnership With Microsoft: A Monumental Moment In Techno Brain’s Journey – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:43Z",
+    "last_updated": "2026-06-11T08:17:43Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/sales-executive-zambia/": {
+    "hash": "6d237c83847df145a072e0c1d9b26569",
+    "title": "Sales Executive – Zambia – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:50Z",
+    "last_updated": "2026-06-11T08:17:50Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/cloud-infrastructure-consultant/": {
+    "hash": "692f1cd9932fa9bfe2ed9286f3970fd6",
+    "title": "Cloud Infrastructure Consultant – Techno Brain",
+    "last_crawled": "2026-06-11T08:17:57Z",
+    "last_updated": "2026-06-11T08:17:57Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/odoo-technical-developer/": {
+    "hash": "68cfc1ee80443e4a6540973380573807",
+    "title": "Odoo Technical Developer – Techno Brain",
+    "last_crawled": "2026-06-11T08:18:04Z",
+    "last_updated": "2026-06-11T08:18:04Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/senior-automation-engineer/": {
+    "hash": "970b067ae17f9ac9e5ff578da8d4f204",
+    "title": "Senior Automation Engineer – Techno Brain",
+    "last_crawled": "2026-06-11T08:18:11Z",
+    "last_updated": "2026-06-11T08:18:11Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/automation-engineer/": {
+    "hash": "7626638826244031fe175731c0533f1d",
+    "title": "Automation Engineer – Techno Brain",
+    "last_crawled": "2026-06-11T08:18:17Z",
+    "last_updated": "2026-06-11T08:18:17Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/software-development-engineer/": {
+    "hash": "680a5c0d8232e639166df84252e0ed54",
+    "title": "Web3 Blockchain Developer – Techno Brain",
+    "last_crawled": "2026-06-11T08:18:27Z",
+    "last_updated": "2026-06-11T08:18:27Z",
+    "vector_count": 2,
+    "type": "page"
+  },
+  "https://www.technobraingroup.com/jobs/technical-project-manager/": {
+    "hash": "f4eeead24dc6d868df350d49a185f047",
+    "title": "Technical Project Manager – Techno Brain",
+    "last_crawled": "2026-06-11T08:18:34Z",
+    "last_updated": "2026-06-11T08:18:34Z",
+    "vector_count": 2,
+    "type": "page"
+  }
+}

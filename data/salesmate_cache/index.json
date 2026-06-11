@@ -1,0 +1,858 @@
+{
+  "https://salesmate.technobraingroup.com": {
+    "hash": "46e8cfabc9d6ad6b74564d000ec5627f",
+    "title": "Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:29:56Z",
+    "last_updated": "2026-06-10T13:29:56Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/": {
+    "hash": "b1c926b72605722c36ba6067a7b38e3e",
+    "title": "Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:00Z",
+    "last_updated": "2026-06-10T13:30:00Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/global-business-solutions/": {
+    "hash": "6c86e719552e1e1bced816585e8ddf19",
+    "title": "Global Business Solutions – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:04Z",
+    "last_updated": "2026-06-10T13:30:04Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/engineering/": {
+    "hash": "a82ee7d57bbff74c42783ff31b8d9ee6",
+    "title": "Engineering – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:06Z",
+    "last_updated": "2026-06-10T13:30:06Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/bpo/": {
+    "hash": "a0b1a69bf7d1c06efa4bd3eb31acd1da",
+    "title": "BPO – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:17Z",
+    "last_updated": "2026-06-10T13:30:17Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/enterprise-business-solutions/": {
+    "hash": "56ae1a17ac5a0b6358e219b80a8f9880",
+    "title": "Enterprise Business Solutions – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:20Z",
+    "last_updated": "2026-06-10T13:30:20Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/solutions/": {
+    "hash": "3faaad44488da20aebf5b6532d0600a7",
+    "title": "Solutions – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:22Z",
+    "last_updated": "2026-06-10T13:30:22Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/tax-and-customs/": {
+    "hash": "382849a16ec1ec73bf839523de0f957d",
+    "title": "Tax and Customs – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:28Z",
+    "last_updated": "2026-06-10T13:30:28Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/identity-management/": {
+    "hash": "b8457da2bc00366eeff14d7536545148",
+    "title": "Identity Management – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:33Z",
+    "last_updated": "2026-06-10T13:30:33Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/public-finance-management/": {
+    "hash": "f58b03a5d3e90e2d05eec02a8163885c",
+    "title": "Public Finance Management – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:37Z",
+    "last_updated": "2026-06-10T13:30:37Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/robotic-process-automation/": {
+    "hash": "85a5d94e422b22fb8c0b203eef2a7fdc",
+    "title": "Robotic Process Automation – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:41Z",
+    "last_updated": "2026-06-10T13:30:41Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/managed-services/": {
+    "hash": "a3556585551f82cd4a65926b781c95c4",
+    "title": "Managed Services – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:46Z",
+    "last_updated": "2026-06-10T13:30:46Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/cloud-services/": {
+    "hash": "5c42055ea7db53830a59b87a1b129dc9",
+    "title": "Cloud Services – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:30:51Z",
+    "last_updated": "2026-06-10T13:30:51Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/collateral/": {
+    "hash": "6722843283dc51b96b18a57bfbc71d8d",
+    "title": "Collateral – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:20Z",
+    "last_updated": "2026-06-10T13:31:20Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/about-us/": {
+    "hash": "9b3bb0aaa08c61b42d73115e73121463",
+    "title": "About Us – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:23Z",
+    "last_updated": "2026-06-10T13:31:23Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/2025/04/30/were-officially-great-place-to-work-certifiedtm/": {
+    "hash": "bc5d23a404e17e0eff0e4d1596e44fca",
+    "title": "We’re Officially Great Place To Work® CertifiedTM – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:32Z",
+    "last_updated": "2026-06-10T13:31:32Z",
+    "vector_count": 3,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/software-testing-and-development-services/": {
+    "hash": "e889fcdd7ce148cb28f9c8cd24d5c23b",
+    "title": "Software Testing & Development Services – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:36Z",
+    "last_updated": "2026-06-10T13:31:36Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/software-testing-and-development-services": {
+    "hash": "c6b59d7974e461617567b3f74bb37dc7",
+    "title": "Software Testing & Development Services – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:40Z",
+    "last_updated": "2026-06-10T13:31:40Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/managed-services": {
+    "hash": "66edf49143f9425216831c4437431183",
+    "title": "Managed Services – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:44Z",
+    "last_updated": "2026-06-10T13:31:44Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/robotic-process-automation": {
+    "hash": "b75c8a1e05394ab327a267a9aa7467d1",
+    "title": "Robotic Process Automation – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:49Z",
+    "last_updated": "2026-06-10T13:31:49Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/cloud-services": {
+    "hash": "3370819e232ba33460b74b1621292b87",
+    "title": "Cloud Services – Techno Brain Salesmate",
+    "last_crawled": "2026-06-10T13:31:53Z",
+    "last_updated": "2026-06-10T13:31:53Z",
+    "vector_count": 1,
+    "type": "page"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Reserve%20Bank%20of%20Malawi": {
+    "hash": "1f831964ced8788714aa92d1d3cceb40",
+    "title": "TBL%20Case%20Study%20Reserve%20Bank%20of%20Malawi",
+    "last_crawled": "2026-06-10T13:32:04Z",
+    "last_updated": "2026-06-10T13:32:04Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Rockefeller%20Foundation": {
+    "hash": "6dc5737a20baf40d750f9bd15d533111",
+    "title": "TBL%20Case%20Study%20Rockefeller%20Foundation",
+    "last_crawled": "2026-06-10T13:32:13Z",
+    "last_updated": "2026-06-10T13:32:13Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Wananchi%20Group%20Holdings": {
+    "hash": "dc28b7276cd2bb15bd84ef7507a9df63",
+    "title": "TBL%20Case%20Study%20Wananchi%20Group%20Holdings",
+    "last_crawled": "2026-06-10T13:32:22Z",
+    "last_updated": "2026-06-10T13:32:22Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Mtec": {
+    "hash": "999fb5ed5a4ddfe64de2af686b94e7cc",
+    "title": "TBL%20Case%20Study%20Mtec",
+    "last_crawled": "2026-06-10T13:32:34Z",
+    "last_updated": "2026-06-10T13:32:34Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Millward%20Brown": {
+    "hash": "b189bbc852256563a563196f9c569bf3",
+    "title": "TBL%20Case%20Study%20Millward%20Brown",
+    "last_crawled": "2026-06-10T13:32:44Z",
+    "last_updated": "2026-06-10T13:32:44Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Studies%20GTbank": {
+    "hash": "ec36b1f619dce01f61046a619f9cc7cc",
+    "title": "TBL%20Case%20Studies%20GTbank",
+    "last_crawled": "2026-06-10T13:32:51Z",
+    "last_updated": "2026-06-10T13:32:51Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Studies%20KNH": {
+    "hash": "3f283f2c7bd1618df3f12ff9dee3aa4f",
+    "title": "TBL%20Case%20Studies%20KNH",
+    "last_crawled": "2026-06-10T13:33:00Z",
+    "last_updated": "2026-06-10T13:33:00Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Child%20Helpline%20Services%20Uganda": {
+    "hash": "8203e85c74eeaf5f28a8fe370ae910f3",
+    "title": "TBL%20Case%20Study%20Child%20Helpline%20Services%20Uganda",
+    "last_crawled": "2026-06-10T13:33:08Z",
+    "last_updated": "2026-06-10T13:33:08Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Derba%20Midroc": {
+    "hash": "dff308e19d54e0f325169381eba7b8b7",
+    "title": "TBL%20Case%20Study%20Derba%20Midroc",
+    "last_crawled": "2026-06-10T13:33:20Z",
+    "last_updated": "2026-06-10T13:33:20Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/205/case_studies-bpo/pdf/TBL%20Case%20Study%20Liquid%20Telecom": {
+    "hash": "80d66c61b23a121f57ea2025626624e0",
+    "title": "TBL%20Case%20Study%20Liquid%20Telecom",
+    "last_crawled": "2026-06-10T13:33:30Z",
+    "last_updated": "2026-06-10T13:33:30Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/204/brochures-bpo/pdf/techno_brain_bpo_us_offerings": {
+    "hash": "85502dee5fe59a16bcff0ea58e45b487",
+    "title": "techno_brain_bpo_us_offerings",
+    "last_crawled": "2026-06-10T13:34:25Z",
+    "last_updated": "2026-06-10T13:34:25Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/204/brochures-bpo/pdf/bpo_corporate_brochure": {
+    "hash": "f9a34663f01e5032b83094008eb83056",
+    "title": "bpo_corporate_brochure",
+    "last_crawled": "2026-06-10T13:35:10Z",
+    "last_updated": "2026-06-10T13:35:10Z",
+    "vector_count": 6,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/204/brochures-bpo/pdf/BPO%20Brochure": {
+    "hash": "0aedd2bf184ee6d78512c2083a7ba82c",
+    "title": "BPO%20Brochure",
+    "last_crawled": "2026-06-10T13:35:26Z",
+    "last_updated": "2026-06-10T13:35:26Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/211/white_papers-bpo/pdf/africa_new_frontier_for_bpos_whitepaper": {
+    "hash": "edbc9565739fa5653bfface0597315f7",
+    "title": "africa_new_frontier_for_bpos_whitepaper",
+    "last_crawled": "2026-06-10T13:35:55Z",
+    "last_updated": "2026-06-10T13:35:55Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/206/certificates_and_recognition-bpo/pdf/microsoft_impact_sourcing_2016": {
+    "hash": "0e77f90a25f0e750fd2616fbeed0bd9c",
+    "title": "microsoft_impact_sourcing_2016",
+    "last_crawled": "2026-06-10T13:36:42Z",
+    "last_updated": "2026-06-10T13:36:42Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/206/certificates_and_recognition-bpo/pdf/techno_iqnet_qms": {
+    "hash": "5b99029b3580d94b5acb4c7bef54fa45",
+    "title": "techno_iqnet_qms",
+    "last_crawled": "2026-06-10T13:36:50Z",
+    "last_updated": "2026-06-10T13:36:50Z",
+    "vector_count": 1,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/245/brochures-tax_and_customs/pdf/Tax%20and%20Customs%20Trips+%20Audit%20and%20Risk": {
+    "hash": "8072f9de8e54683598f375bd0d08b4ce",
+    "title": "Tax%20and%20Customs%20Trips+%20Audit%20and%20Risk",
+    "last_crawled": "2026-06-10T13:37:07Z",
+    "last_updated": "2026-06-10T13:37:07Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/245/brochures-tax_and_customs/pdf/Tax%20and%20Customs%20Trips+%20E-services": {
+    "hash": "8b8a9438517f8f5b0fa095b325a908fd",
+    "title": "Tax%20and%20Customs%20Trips+%20E-services",
+    "last_crawled": "2026-06-10T13:37:20Z",
+    "last_updated": "2026-06-10T13:37:20Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/245/brochures-tax_and_customs/pdf/Tax%20and%20Customs%20Trips+%20Revenue%20Management%20Solution%20Products%20Intro%20Final": {
+    "hash": "7ec08b4e93ba9da60c58a9c59886ada8",
+    "title": "Tax%20and%20Customs%20Trips+%20Revenue%20Management%20Solution%20Products%20Intro%20Final",
+    "last_crawled": "2026-06-10T13:37:55Z",
+    "last_updated": "2026-06-10T13:37:55Z",
+    "vector_count": 19,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/245/brochures-tax_and_customs/pdf/Tax%20and%20Customs%20Trips+%20Debt%20Management": {
+    "hash": "d0625674f6558c8d07d3f89ec2c463f2",
+    "title": "Tax%20and%20Customs%20Trips+%20Debt%20Management",
+    "last_crawled": "2026-06-10T13:38:04Z",
+    "last_updated": "2026-06-10T13:38:04Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/245/brochures-tax_and_customs/pdf/Tax%20and%20Customs%20Trips+%20Investigations": {
+    "hash": "ad0bf43e33cc15ea5bf56dee404f6427",
+    "title": "Tax%20and%20Customs%20Trips+%20Investigations",
+    "last_crawled": "2026-06-10T13:38:14Z",
+    "last_updated": "2026-06-10T13:38:14Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/245/brochures-tax_and_customs/pdf/Techno%20Brain%20Trips+%20Brochure": {
+    "hash": "4f1f02da32bc212fdc1b5c76598c9440",
+    "title": "Techno%20Brain%20Trips+%20Brochure",
+    "last_crawled": "2026-06-10T13:38:31Z",
+    "last_updated": "2026-06-10T13:38:31Z",
+    "vector_count": 6,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/245/brochures-tax_and_customs/pdf/Tax%20and%20Revenue%20Brochure": {
+    "hash": "673771d8a86186a47119688a8de741d6",
+    "title": "Tax%20and%20Revenue%20Brochure",
+    "last_crawled": "2026-06-10T13:38:57Z",
+    "last_updated": "2026-06-10T13:38:57Z",
+    "vector_count": 6,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/246/case_studies-tax_and_customs/pdf/Malawi%20Revenue%20Authority%20-%20%20Case%20Study": {
+    "hash": "91e5c308fb6c076f4473972d562c8a7d",
+    "title": "Malawi%20Revenue%20Authority%20-%20%20Case%20Study",
+    "last_crawled": "2026-06-10T13:39:09Z",
+    "last_updated": "2026-06-10T13:39:09Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/246/case_studies-tax_and_customs/pdf/Trips%20Ghana%20Case%20Study": {
+    "hash": "8de6d5269768555b37953abb801bf30a",
+    "title": "Trips%20Ghana%20Case%20Study",
+    "last_crawled": "2026-06-10T13:39:17Z",
+    "last_updated": "2026-06-10T13:39:17Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/246/case_studies-tax_and_customs/pdf/National%20Revenue%20Authority%20Sierra%20Leone%20-%20Case%20Study": {
+    "hash": "1027ef17087fe9a62e07f2b95f50f6aa",
+    "title": "National%20Revenue%20Authority%20Sierra%20Leone%20-%20Case%20Study",
+    "last_crawled": "2026-06-10T13:39:23Z",
+    "last_updated": "2026-06-10T13:39:23Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/227/brochures-identity_management/pdf/Identity%20Management%20Brochure": {
+    "hash": "2450e730a5a3f9413f526656c8a360cf",
+    "title": "Identity%20Management%20Brochure",
+    "last_crawled": "2026-06-10T13:40:02Z",
+    "last_updated": "2026-06-10T13:40:02Z",
+    "vector_count": 7,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/227/brochures-identity_management/pdf/eVisa%20Brochure": {
+    "hash": "28ae5ab86d693174cfaed10d6bccc60d",
+    "title": "eVisa%20Brochure",
+    "last_crawled": "2026-06-10T13:40:15Z",
+    "last_updated": "2026-06-10T13:40:15Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/AFIS%20for%20Malawi%20Police%20Case%20Study": {
+    "hash": "86ec36bb20880f8a695d030b84ef8348",
+    "title": "AFIS%20for%20Malawi%20Police%20Case%20Study",
+    "last_crawled": "2026-06-10T13:40:24Z",
+    "last_updated": "2026-06-10T13:40:24Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/Digital%20IDs%20Addis%20Ababa%20Case%20Study": {
+    "hash": "ecd1c559ed27a1b1357ce8d0fc8a2260",
+    "title": "Digital%20IDs%20Addis%20Ababa%20Case%20Study",
+    "last_crawled": "2026-06-10T13:40:46Z",
+    "last_updated": "2026-06-10T13:40:46Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/eVisa%20Department%20of%20Immigration%20and%20Citizenship%20Services%20(DOICS)%20Malawi%20Case%20Study": {
+    "hash": "72ea1136ddcc282ecf191573b4731c54",
+    "title": "eVisa%20Department%20of%20Immigration%20and%20Citizenship%20Services%20(DOICS)%20Malawi%20Case%20Study",
+    "last_crawled": "2026-06-10T13:41:17Z",
+    "last_updated": "2026-06-10T13:41:17Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/AFIS%20for%20Tanzania%20Police%20Case%20Study": {
+    "hash": "f5273f9157d7129f7504b235c9b2214e",
+    "title": "AFIS%20for%20Tanzania%20Police%20Case%20Study",
+    "last_crawled": "2026-06-10T13:41:25Z",
+    "last_updated": "2026-06-10T13:41:25Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/Border%20Control%20System%20for%20Malawi%20Department%20of%20Immigration%20Case%20Study": {
+    "hash": "5a6e7634a1fc63347f4bb45f9981b795",
+    "title": "Border%20Control%20System%20for%20Malawi%20Department%20of%20Immigration%20Case%20Study",
+    "last_crawled": "2026-06-10T13:41:31Z",
+    "last_updated": "2026-06-10T13:41:31Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/E-passport%20Upgrade%20Department%20of%20Immigration%20and%20Citizenship%20Services%20(DOICS)%20Malawi%20Case%20Study": {
+    "hash": "994e4094f51d964ddc17137efc8c44bf",
+    "title": "E-passport%20Upgrade%20Department%20of%20Immigration%20and%20Citizenship%20Services%20(DOICS)%20Malawi%20Case%20Study",
+    "last_crawled": "2026-06-10T13:41:40Z",
+    "last_updated": "2026-06-10T13:41:40Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/Integrated%20Driving%20Licences%20&%20Vehicle%20Registration%20System%20(IDLVRS)%20Liberia%20Case%20Study": {
+    "hash": "75e4b32805abe00ca342e58135107b68",
+    "title": "Integrated%20Driving%20Licences%20&%20Vehicle%20Registration%20System%20(IDLVRS)%20Liberia%20Case%20Study",
+    "last_crawled": "2026-06-10T13:42:25Z",
+    "last_updated": "2026-06-10T13:42:25Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/Driving%20Licence%20Issuance%20System%20Ethiopia%20Transport%20Case%20Study": {
+    "hash": "eec9af8788db6bd39c1f61ee7e766e57",
+    "title": "Driving%20Licence%20Issuance%20System%20Ethiopia%20Transport%20Case%20Study",
+    "last_crawled": "2026-06-10T13:42:33Z",
+    "last_updated": "2026-06-10T13:42:33Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/Electronic%20Verification%20Drug%20Authorities%20Case%20Study": {
+    "hash": "b47a1f6ea6e1d124347c9f3d967c5270",
+    "title": "Electronic%20Verification%20Drug%20Authorities%20Case%20Study",
+    "last_crawled": "2026-06-10T13:42:43Z",
+    "last_updated": "2026-06-10T13:42:43Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/228/case_studies-identity_management/pdf/National%20Biometric%20Identification%20System%20Liberia%20Case%20Study": {
+    "hash": "8a617b1006db7c6bea8f58dfe276917f",
+    "title": "National%20Biometric%20Identification%20System%20Liberia%20Case%20Study",
+    "last_crawled": "2026-06-10T13:43:52Z",
+    "last_updated": "2026-06-10T13:43:52Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/231/testimonials-identity_management/pdf/Dept%20of%20Immigration%20Passport%20Issuance%20Malawi%20Testimonial": {
+    "hash": "a3d2bf09090754c226f677482a390365",
+    "title": "Dept%20of%20Immigration%20Passport%20Issuance%20Malawi%20Testimonial",
+    "last_crawled": "2026-06-10T13:43:57Z",
+    "last_updated": "2026-06-10T13:43:57Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/236/brochures-public_finance_management/pdf/Integrated%20Financial%20Management%20Brochure": {
+    "hash": "8346bad67c53997ccf4d27f359a43c9d",
+    "title": "Integrated%20Financial%20Management%20Brochure",
+    "last_crawled": "2026-06-10T13:44:53Z",
+    "last_updated": "2026-06-10T13:44:53Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/236/brochures-public_finance_management/pdf/Performance%20Budgeting%20System%20Brochure": {
+    "hash": "9fa40806fbe1b1b335d55817517993cc",
+    "title": "Performance%20Budgeting%20System%20Brochure",
+    "last_crawled": "2026-06-10T13:45:05Z",
+    "last_updated": "2026-06-10T13:45:05Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/236/brochures-public_finance_management/pdf/Public%20Finance%20Management%20Solutions%20Brochure": {
+    "hash": "6fccf91f79e5b53e927e13f712836b11",
+    "title": "Public%20Finance%20Management%20Solutions%20Brochure",
+    "last_crawled": "2026-06-10T13:45:27Z",
+    "last_updated": "2026-06-10T13:45:27Z",
+    "vector_count": 9,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/236/brochures-public_finance_management/pdf/Revenue%20Management%20System%20Brochure": {
+    "hash": "07c4076c84f0f6aa921061e78cb2dd9f",
+    "title": "Revenue%20Management%20System%20Brochure",
+    "last_crawled": "2026-06-10T13:45:35Z",
+    "last_updated": "2026-06-10T13:45:35Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/236/brochures-public_finance_management/pdf/Public%20Finance%20Management%20Municipal%20Solutions%20Brochure": {
+    "hash": "78b80244b9dec9ed07547cd5f5387437",
+    "title": "Public%20Finance%20Management%20Municipal%20Solutions%20Brochure",
+    "last_crawled": "2026-06-10T13:45:59Z",
+    "last_updated": "2026-06-10T13:45:59Z",
+    "vector_count": 6,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Performance%20Budget%20System%20Ministry%20of%20Finance%20Uganda%20Case%20Study": {
+    "hash": "baaf7594c6b9e80194265308fff04ace",
+    "title": "Performance%20Budget%20System%20Ministry%20of%20Finance%20Uganda%20Case%20Study",
+    "last_crawled": "2026-06-10T13:46:14Z",
+    "last_updated": "2026-06-10T13:46:14Z",
+    "vector_count": 6,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Integrated%20Finance%20Management%20System%20Ethiopia%20Case%20Study": {
+    "hash": "5ff750f8d64cd1d86b83a896b4de6ab1",
+    "title": "Integrated%20Finance%20Management%20System%20Ethiopia%20Case%20Study",
+    "last_crawled": "2026-06-10T13:46:25Z",
+    "last_updated": "2026-06-10T13:46:25Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Integrated%20Finance%20Management%20System%20Local%20Governments%20Uganda%20Case%20Study": {
+    "hash": "5471d9d9e65ca6b1a1663b2dd188a07a",
+    "title": "Integrated%20Finance%20Management%20System%20Local%20Governments%20Uganda%20Case%20Study",
+    "last_crawled": "2026-06-10T13:46:47Z",
+    "last_updated": "2026-06-10T13:46:47Z",
+    "vector_count": 15,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Integrated%20Finance%20Management%20System%20Tanapa%20Tanzania%20Case%20Study": {
+    "hash": "0556ff924b8866e13068f57331e4356b",
+    "title": "Integrated%20Finance%20Management%20System%20Tanapa%20Tanzania%20Case%20Study",
+    "last_crawled": "2026-06-10T13:46:51Z",
+    "last_updated": "2026-06-10T13:46:51Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Integrated%20Finance%20Management%20System%20Local%20Governments%20Malawi%20Case%20Study": {
+    "hash": "634a138d3ccb58f4673ed2d572cf9304",
+    "title": "Integrated%20Finance%20Management%20System%20Local%20Governments%20Malawi%20Case%20Study",
+    "last_crawled": "2026-06-10T13:47:08Z",
+    "last_updated": "2026-06-10T13:47:08Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Revenue%20Management%20System%20Kwale%20County%20Government%20Kenya%20Case%20Study": {
+    "hash": "82e92da4bd39c698f036a96a86a81057",
+    "title": "Revenue%20Management%20System%20Kwale%20County%20Government%20Kenya%20Case%20Study",
+    "last_crawled": "2026-06-10T13:47:17Z",
+    "last_updated": "2026-06-10T13:47:17Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Integrated%20Finance%20Management%20System%20Institute%20of%20Company%20Secretaries%20India%20Case%20Study": {
+    "hash": "1bb9a44ce3e8a69c7490e6bee278e027",
+    "title": "Integrated%20Finance%20Management%20System%20Institute%20of%20Company%20Secretaries%20India%20Case%20Study",
+    "last_crawled": "2026-06-10T13:47:27Z",
+    "last_updated": "2026-06-10T13:47:27Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/237/case_studies-public_finance_management/pdf/Geographic%20Information%20System%20Ulmis%20Namibia%20Case%20Study": {
+    "hash": "3b977735c799d42a1e0537d1d91b27fc",
+    "title": "Geographic%20Information%20System%20Ulmis%20Namibia%20Case%20Study",
+    "last_crawled": "2026-06-10T13:47:47Z",
+    "last_updated": "2026-06-10T13:47:47Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/240/testimonials-public_finance_management/pdf/Ministry%20of%20Finance%20Oracle%20IFMIS%20Testimonial%20Ethiopia": {
+    "hash": "c0555695b3229f62c830e4a212c79aa6",
+    "title": "Ministry%20of%20Finance%20Oracle%20IFMIS%20Testimonial%20Ethiopia",
+    "last_crawled": "2026-06-10T13:48:00Z",
+    "last_updated": "2026-06-10T13:48:00Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/240/testimonials-public_finance_management/pdf/Tanapa%20IFMIS%20Testimonial": {
+    "hash": "43443e82fa8648825f1682ee74507ad1",
+    "title": "Tanapa%20IFMIS%20Testimonial",
+    "last_crawled": "2026-06-10T13:48:10Z",
+    "last_updated": "2026-06-10T13:48:10Z",
+    "vector_count": 1,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/240/testimonials-public_finance_management/pdf/Ministry%20of%20Local%20Government%20Nav%20IFMIS%20Testimonial%20Uganda": {
+    "hash": "9027d530d5288bacb5a785575449575c",
+    "title": "Ministry%20of%20Local%20Government%20Nav%20IFMIS%20Testimonial%20Uganda",
+    "last_crawled": "2026-06-10T13:48:16Z",
+    "last_updated": "2026-06-10T13:48:16Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/240/testimonials-public_finance_management/pdf/Elidz%20AX%20GIS%20Sharepoint%20Epm%20Testimonial%20South%20Africa": {
+    "hash": "660628b8ff7bc203d8a4fa3488a27c7b",
+    "title": "Elidz%20AX%20GIS%20Sharepoint%20Epm%20Testimonial%20South%20Africa",
+    "last_crawled": "2026-06-10T13:48:28Z",
+    "last_updated": "2026-06-10T13:48:28Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/243/white_papers-public_finance_management/pdf/Mobile%20Accounting%20White%20paper": {
+    "hash": "c5f204422c3799f083319307b379f412",
+    "title": "Mobile%20Accounting%20White%20paper",
+    "last_crawled": "2026-06-10T13:49:24Z",
+    "last_updated": "2026-06-10T13:49:24Z",
+    "vector_count": 7,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/243/white_papers-public_finance_management/pdf/Performance%20Budget%20System%20White%20paper%20Methodology%20and%20Tools": {
+    "hash": "f554e9c151a488fe8817ecba60ea734d",
+    "title": "Performance%20Budget%20System%20White%20paper%20Methodology%20and%20Tools",
+    "last_crawled": "2026-06-10T13:49:44Z",
+    "last_updated": "2026-06-10T13:49:44Z",
+    "vector_count": 9,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/243/white_papers-public_finance_management/pdf/Revenue%20Management%20System%20White%20paper": {
+    "hash": "a19b3754d31edfc35e02340825118943",
+    "title": "Revenue%20Management%20System%20White%20paper",
+    "last_crawled": "2026-06-10T13:50:07Z",
+    "last_updated": "2026-06-10T13:50:07Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/261/brochures-robotic_process_automation/pdf/RPA%20Brochure": {
+    "hash": "7e7df0fd53c5a7b31f0e389e02d6cc39",
+    "title": "RPA%20Brochure",
+    "last_crawled": "2026-06-10T13:50:23Z",
+    "last_updated": "2026-06-10T13:50:23Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/219/case_studies-enterprise_business_solutions/pdf/Safaricom%20RPA%20case%20study": {
+    "hash": "b808ff6ce13a8b097a727286056289eb",
+    "title": "Safaricom%20RPA%20case%20study",
+    "last_crawled": "2026-06-10T13:50:43Z",
+    "last_updated": "2026-06-10T13:50:43Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/219/case_studies-enterprise_business_solutions/pdf/Jambojet%20RPA%20Case%20Study": {
+    "hash": "b2ed9a5340bab50e305abf7dd1d39a77",
+    "title": "Jambojet%20RPA%20Case%20Study",
+    "last_crawled": "2026-06-10T13:50:59Z",
+    "last_updated": "2026-06-10T13:50:59Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/263/pitch_decks-robotic_process_automation/pdf/TBL%20Robotic%20Process%20Automation%20Presentation%20PDF": {
+    "hash": "5237140eceeac07d895d9c23c5fe363e",
+    "title": "TBL%20Robotic%20Process%20Automation%20Presentation%20PDF",
+    "last_crawled": "2026-06-10T13:51:06Z",
+    "last_updated": "2026-06-10T13:51:06Z",
+    "vector_count": 1,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/263/pitch_decks-robotic_process_automation/pdf/rpa-presentation_latest": {
+    "hash": "9fe5bfacf395fded04d41f0784060810",
+    "title": "rpa-presentation_latest",
+    "last_crawled": "2026-06-10T13:51:18Z",
+    "last_updated": "2026-06-10T13:51:18Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/218/brochures-enterprise_business_solutions/pdf/Techno%20Brain%20Enterprise%20Business%20Brochure": {
+    "hash": "2525f8e6bae49c00133902b175f862fb",
+    "title": "Techno%20Brain%20Enterprise%20Business%20Brochure",
+    "last_crawled": "2026-06-10T13:51:25Z",
+    "last_updated": "2026-06-10T13:51:25Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/218/brochures-enterprise_business_solutions/pdf/Techno%20Brain%20Microsoft%20Dynamics%20Brochure": {
+    "hash": "60fe42506e23bc7e8d539bf52b3ce8de",
+    "title": "Techno%20Brain%20Microsoft%20Dynamics%20Brochure",
+    "last_crawled": "2026-06-10T13:51:43Z",
+    "last_updated": "2026-06-10T13:51:43Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/Zambia%20Environmental%20Management%20Agency%20Case%20Study": {
+    "hash": "9389d455e08a314cfa6e1ccd0b179b67",
+    "title": "Zambia%20Environmental%20Management%20Agency%20Case%20Study",
+    "last_crawled": "2026-06-10T13:51:56Z",
+    "last_updated": "2026-06-10T13:51:56Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/Zimbabwe%20Revenue%20Authority%20(ZIMRA)%20Electronic%20Cargo%20Tracking%20System%20ECTS%20Case%20Study": {
+    "hash": "d44aa41d614ea410e91290f995bc896b",
+    "title": "Zimbabwe%20Revenue%20Authority%20(ZIMRA)%20Electronic%20Cargo%20Tracking%20System%20ECTS%20Case%20Study",
+    "last_crawled": "2026-06-10T13:52:02Z",
+    "last_updated": "2026-06-10T13:52:02Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/Online%20Type%20Approval%20System%20for%20Tanzania%20Communications%20Regulatory%20Authority%20%20Case%20Study": {
+    "hash": "e61ef71949ffc2f8604c136e96609c70",
+    "title": "Online%20Type%20Approval%20System%20for%20Tanzania%20Communications%20Regulatory%20Authority%20%20Case%20Study",
+    "last_crawled": "2026-06-10T13:52:07Z",
+    "last_updated": "2026-06-10T13:52:07Z",
+    "vector_count": 2,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/ERP%20System%20for%20SBC%20Tanzania%20Case%20Study": {
+    "hash": "83fa0c46ccfc25ed1442af987a8d7236",
+    "title": "ERP%20System%20for%20SBC%20Tanzania%20Case%20Study",
+    "last_crawled": "2026-06-10T13:52:13Z",
+    "last_updated": "2026-06-10T13:52:13Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/ERP%20System%20for%20Serengeti%20Breweries%20Case%20Study": {
+    "hash": "ed96fe8108d1147044aa97bcec69a4fa",
+    "title": "ERP%20System%20for%20Serengeti%20Breweries%20Case%20Study",
+    "last_crawled": "2026-06-10T13:52:20Z",
+    "last_updated": "2026-06-10T13:52:20Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/Partner%20CRM%20System%20for%20Garanti%20Pension%20and%20Life%20%20Case%20Study%20May%202017": {
+    "hash": "09aa51f9f72b8196f4ec1252fbdcea5a",
+    "title": "Partner%20CRM%20System%20for%20Garanti%20Pension%20and%20Life%20%20Case%20Study%20May%202017",
+    "last_crawled": "2026-06-10T13:52:26Z",
+    "last_updated": "2026-06-10T13:52:26Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/Pharmaceutical%20Information%20Portal%20for%20Management%20Services%20for%20Health%20Case%20Study%20May%202017": {
+    "hash": "a8fc840472e05150f1a9f980f9bb641a",
+    "title": "Pharmaceutical%20Information%20Portal%20for%20Management%20Services%20for%20Health%20Case%20Study%20May%202017",
+    "last_crawled": "2026-06-10T13:52:32Z",
+    "last_updated": "2026-06-10T13:52:32Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/National%20Environmental%20Management%20Authority%20MIS%20System%20Casestudy%20May%202017": {
+    "hash": "f993292cc7293bc18bd991c1b82b4267",
+    "title": "National%20Environmental%20Management%20Authority%20MIS%20System%20Casestudy%20May%202017",
+    "last_crawled": "2026-06-10T13:52:55Z",
+    "last_updated": "2026-06-10T13:52:55Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/262/case_studies-managed-services/pdf/National%20Drug%20Authority%20Import%20and%20Verification%20Case%20Study%20May%202017": {
+    "hash": "6a58ad7bb34ee43a841e75dd6185d272",
+    "title": "National%20Drug%20Authority%20Import%20and%20Verification%20Case%20Study%20May%202017",
+    "last_crawled": "2026-06-10T13:53:01Z",
+    "last_updated": "2026-06-10T13:53:01Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/222/testimonials-enterprise_business_solutions/pdf/SBC%20Testimonial": {
+    "hash": "a43d92a41013780de1ee08a44571ac93",
+    "title": "SBC%20Testimonial",
+    "last_crawled": "2026-06-10T13:53:05Z",
+    "last_updated": "2026-06-10T13:53:05Z",
+    "vector_count": 1,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/222/testimonials-enterprise_business_solutions/pdf/Electronic%20Cargo%20Tracking%20System%20for%20Tanzania%20Revenue%20Authority%20(TRA)": {
+    "hash": "ff8f1e78b42b2ada8f73f8530208f766",
+    "title": "Electronic%20Cargo%20Tracking%20System%20for%20Tanzania%20Revenue%20Authority%20(TRA)",
+    "last_crawled": "2026-06-10T13:53:10Z",
+    "last_updated": "2026-06-10T13:53:10Z",
+    "vector_count": 1,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/222/testimonials-enterprise_business_solutions/pdf/Shayona%20Cement": {
+    "hash": "aab102e8d81b9c0d2dbb9546f62c7d77",
+    "title": "Shayona%20Cement",
+    "last_crawled": "2026-06-10T13:53:16Z",
+    "last_updated": "2026-06-10T13:53:16Z",
+    "vector_count": 1,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/222/testimonials-enterprise_business_solutions/pdf/Vehicle%20Tracking%20System%20for%20Maktheshim%20Agan%20India%20Pvt%20Limited": {
+    "hash": "0498d1c3807e2d7b68e6f12ca22e9beb",
+    "title": "Vehicle%20Tracking%20System%20for%20Maktheshim%20Agan%20India%20Pvt%20Limited",
+    "last_crawled": "2026-06-10T13:53:30Z",
+    "last_updated": "2026-06-10T13:53:30Z",
+    "vector_count": 1,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/255/profiles/pdf/india-company-profile": {
+    "hash": "89dba9dc96414297b78fa29607be4771",
+    "title": "india-company-profile",
+    "last_crawled": "2026-06-10T13:54:08Z",
+    "last_updated": "2026-06-10T13:54:08Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/255/profiles/pdf/ethiopia-company-profile": {
+    "hash": "4f5984a101c39416f7cbee4903b2dc5f",
+    "title": "ethiopia-company-profile",
+    "last_crawled": "2026-06-10T13:54:23Z",
+    "last_updated": "2026-06-10T13:54:23Z",
+    "vector_count": 4,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/255/profiles/pdf/tanzania-company-profile": {
+    "hash": "154ee9b02d94e76d1a1043b4948f8ccc",
+    "title": "tanzania-company-profile",
+    "last_crawled": "2026-06-10T13:54:39Z",
+    "last_updated": "2026-06-10T13:54:39Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/255/profiles/pdf/techno-brain-company-profile": {
+    "hash": "119ec6610288d6eb1e28e2a370eb4117",
+    "title": "techno-brain-company-profile",
+    "last_crawled": "2026-06-10T13:54:52Z",
+    "last_updated": "2026-06-10T13:54:52Z",
+    "vector_count": 3,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/255/profiles/pdf/tbl-timeless": {
+    "hash": "b144091caf065d4af690df23e26ebe58",
+    "title": "tbl-timeless",
+    "last_crawled": "2026-06-10T13:56:09Z",
+    "last_updated": "2026-06-10T13:56:09Z",
+    "vector_count": 44,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/255/profiles/pdf/kenya-company-profile": {
+    "hash": "70a66c8b204c9f4431ee253b1834f015",
+    "title": "kenya-company-profile",
+    "last_crawled": "2026-06-10T13:56:37Z",
+    "last_updated": "2026-06-10T13:56:37Z",
+    "vector_count": 5,
+    "type": "document"
+  },
+  "https://salesmate.technobraingroup.com/salesmate_aws_s3/255/profiles/pdf/uganda-company-profile": {
+    "hash": "297e730059986a987421dafd25b8796b",
+    "title": "uganda-company-profile",
+    "last_crawled": "2026-06-10T13:57:09Z",
+    "last_updated": "2026-06-10T13:57:09Z",
+    "vector_count": 5,
+    "type": "document"
+  }
+}

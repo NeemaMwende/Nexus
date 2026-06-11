@@ -175,6 +175,7 @@ async def lifespan(app: FastAPI):
         print(f"✓ Qdrant ready — {count} vectors in knowledge base")
         if count == 0:
             print("  ⚠ Knowledge base is empty. Run: python -m rag.ingest_salesmate")
+            print("  ⚠ Or run: python -m rag.ingest_technobrain")
     except Exception as e:
         print(f"⚠ Qdrant: {e}")
 
@@ -203,9 +204,26 @@ async def lifespan(app: FastAPI):
         timezone="UTC",
     )
 
+    # Daily TechnoBrain website sync at 01:00 UTC (offset from Salesmate)
+    async def _run_technobrain_sync():
+        from rag.ingest_technobrain import run_incremental_ingest as tb_ingest
+        loop = asyncio.get_event_loop()
+        await loop.run_in_executor(None, tb_ingest)
+
+    scheduler.add_job(
+        _run_technobrain_sync,
+        "cron",
+        hour=1,
+        minute=0,
+        id="technobrain_daily_sync",
+        max_instances=1,
+        timezone="UTC",
+    )
+
     scheduler.start()
     print(f"✓ Email poller started (every {config.POLL_INTERVAL}s)")
     print("✓ Salesmate sync scheduled (daily at 00:00 UTC)")
+    print("✓ TechnoBrain sync scheduled (daily at 01:00 UTC)")
     print(f"✓ Nexus running at http://localhost:{config.NEXUS_PORT}\n")
 
     yield
@@ -356,6 +374,20 @@ async def trigger_ingest(request: Request, background_tasks: BackgroundTasks):
 
     background_tasks.add_task(run_ingest)
     return {"triggered": True, "message": "Ingest running in background"}
+
+
+@app.post("/trigger/ingest-technobrain")
+async def trigger_ingest_technobrain(request: Request, background_tasks: BackgroundTasks):
+    """Manually re-run the TechnoBrain website ingestion."""
+    if not verify_secret(request):
+        raise HTTPException(status_code=403, detail="Invalid secret")
+
+    def run_ingest():
+        from rag.ingest_technobrain import run_incremental_ingest
+        run_incremental_ingest()
+
+    background_tasks.add_task(run_ingest)
+    return {"triggered": True, "message": "TechnoBrain ingest running in background"}
 
 
 # ── Run ───────────────────────────────────────────────────────────────────────
