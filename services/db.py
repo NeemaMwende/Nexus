@@ -255,6 +255,18 @@ def fetch_events(
     return {"events": events, "total": total, "limit": limit, "offset": offset}
 
 
+def fetch_event(event_id: int) -> Optional[dict]:
+    """Full detail for one processed email (B2) — includes reply HTML, rag passages, node timings."""
+    with _get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT * FROM nexus_email_log WHERE id = %s", (event_id,))
+            row = cur.fetchone()
+            if not row:
+                return None
+            names = [d[0] for d in cur.description]
+            return dict(zip(names, row))
+
+
 def close_pool() -> None:
     """Close all connections in the pool."""
     global _pool
