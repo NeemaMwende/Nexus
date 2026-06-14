@@ -159,6 +159,60 @@ def ensure_schema() -> None:
         print(f"[db] contact_messages augment skipped: {e}")
 
 
+def log_email(p: dict) -> None:
+    """
+    Upsert one processed-email record into nexus_email_log (keyed by email_id,
+    so reprocessing the same Gmail message updates the row instead of duplicating).
+    JSONB columns are passed as JSON strings and cast in SQL.
+    """
+    with _get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                INSERT INTO nexus_email_log (
+                    email_id, thread_id, submission_id, sender_name, sender_email,
+                    sender_phone, subject, message, product_interest, intent,
+                    intent_confidence, is_valid_email, is_valid_phone, is_spam,
+                    spam_reason, outcome, reply_sent, draft_reply_html, draft_reply_text,
+                    rag_chunks, node_timings, duration_ms, error, status_message
+                ) VALUES (
+                    %(email_id)s, %(thread_id)s, %(submission_id)s, %(sender_name)s, %(sender_email)s,
+                    %(sender_phone)s, %(subject)s, %(message)s, %(product_interest)s, %(intent)s,
+                    %(intent_confidence)s, %(is_valid_email)s, %(is_valid_phone)s, %(is_spam)s,
+                    %(spam_reason)s, %(outcome)s, %(reply_sent)s, %(draft_reply_html)s, %(draft_reply_text)s,
+                    %(rag_chunks)s::jsonb, %(node_timings)s::jsonb, %(duration_ms)s, %(error)s, %(status_message)s
+                )
+                ON CONFLICT (email_id) DO UPDATE SET
+                    thread_id         = EXCLUDED.thread_id,
+                    submission_id     = EXCLUDED.submission_id,
+                    sender_name       = EXCLUDED.sender_name,
+                    sender_email      = EXCLUDED.sender_email,
+                    sender_phone      = EXCLUDED.sender_phone,
+                    subject           = EXCLUDED.subject,
+                    message           = EXCLUDED.message,
+                    product_interest  = EXCLUDED.product_interest,
+                    intent            = EXCLUDED.intent,
+                    intent_confidence = EXCLUDED.intent_confidence,
+                    is_valid_email    = EXCLUDED.is_valid_email,
+                    is_valid_phone    = EXCLUDED.is_valid_phone,
+                    is_spam           = EXCLUDED.is_spam,
+                    spam_reason       = EXCLUDED.spam_reason,
+                    outcome           = EXCLUDED.outcome,
+                    reply_sent        = EXCLUDED.reply_sent,
+                    draft_reply_html  = EXCLUDED.draft_reply_html,
+                    draft_reply_text  = EXCLUDED.draft_reply_text,
+                    rag_chunks        = EXCLUDED.rag_chunks,
+                    node_timings      = EXCLUDED.node_timings,
+                    duration_ms       = EXCLUDED.duration_ms,
+                    error             = EXCLUDED.error,
+                    status_message    = EXCLUDED.status_message,
+                    created_at        = NOW()
+                """,
+                p,
+            )
+        conn.commit()
+
+
 def close_pool() -> None:
     """Close all connections in the pool."""
     global _pool
