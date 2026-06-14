@@ -2,3 +2,7 @@ venv
 .env
 data/credentials.json
 data/gmail_token.json
+
+# Python
+__pycache__/
+*.pyc
