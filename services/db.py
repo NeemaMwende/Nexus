@@ -326,6 +326,15 @@ def fetch_stats(rng: str = "today") -> dict:
             "deltas": deltas, "bucket": bucket, "buckets": buckets}
 
 
+def ping() -> bool:
+    """Lightweight liveness check for /health. Raises if the DB is unreachable."""
+    with _get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT 1")
+            cur.fetchone()
+    return True
+
+
 def close_pool() -> None:
     """Close all connections in the pool."""
     global _pool
