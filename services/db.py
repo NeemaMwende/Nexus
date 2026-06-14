@@ -267,6 +267,65 @@ def fetch_event(event_id: int) -> Optional[dict]:
             return dict(zip(names, row))
 
 
+def fetch_stats(rng: str = "today") -> dict:
+    """
+    Aggregate KPIs + deltas vs the previous equal window + throughput buckets (B3).
+    rng ∈ {today, 7d, 30d}. All windows computed in SQL against DB time.
+    """
+    if rng not in ("today", "7d", "30d"):
+        rng = "today"
+    cur_start = {
+        "today": "date_trunc('day', now())",
+        "7d":    "now() - interval '7 days'",
+        "30d":   "now() - interval '30 days'",
+    }[rng]
+    prev_start = {
+        "today": "date_trunc('day', now()) - interval '1 day'",
+        "7d":    "now() - interval '14 days'",
+        "30d":   "now() - interval '60 days'",
+    }[rng]
+    bucket = "hour" if rng == "today" else "day"
+
+    def _norm(rows: list) -> dict:
+        d = {"processed": 0, "replied": 0, "spam": 0, "invalid": 0, "errors": 0, "held": 0}
+        keymap = {"replied": "replied", "spam": "spam", "invalid": "invalid", "error": "errors", "held": "held"}
+        for outcome, c in rows:
+            d["processed"] += c
+            if outcome in keymap:
+                d[keymap[outcome]] = c
+        return d
+
+    with _get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT outcome, count(*) FROM nexus_email_log WHERE created_at >= {cur_start} GROUP BY outcome")
+            cur_tot = _norm(cur.fetchall())
+            cur.execute(
+                f"SELECT outcome, count(*) FROM nexus_email_log "
+                f"WHERE created_at >= {prev_start} AND created_at < {cur_start} GROUP BY outcome"
+            )
+            prev_tot = _norm(cur.fetchall())
+            cur.execute(
+                f"""
+                SELECT date_trunc('{bucket}', created_at) AS t,
+                       count(*) FILTER (WHERE outcome = 'replied') AS replied,
+                       count(*) FILTER (WHERE outcome = 'held')    AS held,
+                       count(*) AS total
+                FROM nexus_email_log
+                WHERE created_at >= {cur_start}
+                GROUP BY t ORDER BY t
+                """
+            )
+            names = [d[0] for d in cur.description]
+            buckets = [dict(zip(names, row)) for row in cur.fetchall()]
+
+    def _pct(c: int, p: int):
+        return round((c - p) / p * 100) if p else None
+
+    deltas = {k: _pct(cur_tot[k], prev_tot[k]) for k in cur_tot}
+    return {"range": rng, "totals": cur_tot, "previous": prev_tot,
+            "deltas": deltas, "bucket": bucket, "buckets": buckets}
+
+
 def close_pool() -> None:
     """Close all connections in the pool."""
     global _pool
