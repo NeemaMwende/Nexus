@@ -213,6 +213,48 @@ def log_email(p: dict) -> None:
         conn.commit()
 
 
+def fetch_events(
+    limit: int = 50,
+    offset: int = 0,
+    outcome: Optional[str] = None,
+    intent: Optional[str] = None,
+    search: Optional[str] = None,
+    since=None,
+) -> dict:
+    """
+    Paginated processed-email history from nexus_email_log (B2).
+    Returns {"events": [...], "total": N, "limit": L, "offset": O}.
+    List view omits the heavy columns (reply HTML, rag passages) — those load per-row via fetch_event.
+    """
+    where, params = [], []
+    if outcome:
+        where.append("outcome = %s"); params.append(outcome)
+    if intent:
+        where.append("intent = %s"); params.append(intent)
+    if search:
+        where.append("(sender_name ILIKE %s OR sender_email ILIKE %s OR subject ILIKE %s OR message ILIKE %s)")
+        s = f"%{search}%"; params.extend([s, s, s, s])
+    if since:
+        where.append("created_at >= %s"); params.append(since)
+    where_sql = ("WHERE " + " AND ".join(where)) if where else ""
+
+    cols = ("id, email_id, created_at, sender_name, sender_email, subject, intent, "
+            "intent_confidence, outcome, reply_sent, is_spam, is_valid_email, is_valid_phone, duration_ms")
+
+    with _get_conn() as conn:
+        with conn.cursor() as cur:
+            cur.execute(f"SELECT count(*) FROM nexus_email_log {where_sql}", params)
+            total = cur.fetchone()[0]
+            cur.execute(
+                f"SELECT {cols} FROM nexus_email_log {where_sql} "
+                f"ORDER BY created_at DESC LIMIT %s OFFSET %s",
+                params + [limit, offset],
+            )
+            names = [d[0] for d in cur.description]
+            events = [dict(zip(names, row)) for row in cur.fetchall()]
+    return {"events": events, "total": total, "limit": limit, "offset": offset}
+
+
 def close_pool() -> None:
     """Close all connections in the pool."""
     global _pool
